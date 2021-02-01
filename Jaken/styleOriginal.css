@@ -28,3 +28,8 @@ body{
     margin: 20px;
     color: white;
 }
+#choix{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
