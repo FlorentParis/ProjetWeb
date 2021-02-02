@@ -79,9 +79,12 @@ function game(choicePlayer) {
 
 function verifwin() {
     if(sommeJoueur == 10){
-        console.log("Le joueur à gagné !");
+        document.getElementById("winglobal").style.display = "fixed";
     }else if(sommeOrdi == 10){
-        console.log("L'ordi a gagné...");
+        document.getElementById("looseglobal").style.display = "fixed";
+    }else{
+        document.getElementById("winglobal").style.display = "none";
+        document.getElementById("looseglobal").style.display = "none";
     }
 }
 

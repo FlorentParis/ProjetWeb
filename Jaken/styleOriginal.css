@@ -71,3 +71,28 @@ a{
     text-decoration: none;
     color: white;
 }
+.global{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(106, 48, 147, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerglobal{
+    background-color: rebeccapurple;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    border-radius: 10px;
+    border: 5px solid white;
+}
+.containerglobal button{
+    font-size: 20px;
+    height: 200px;
+    width: 200px;
+}
