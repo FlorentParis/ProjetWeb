@@ -13,6 +13,16 @@ body{
     justify-content: center;
     align-items: center;
 }
+button{
+    margin: 0 30px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    border: 5px solid white;
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 30px;
+}
 #score .containerJoueur, #score .containerOrdi{
     border: 1px solid white;
     padding: 30px;
@@ -32,4 +42,57 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.popup-container{
+    display: block;
+    position: fixed;
+    margin: 50vh 0 0 50vw;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 4rem;
+    padding: 5rem;
+    border-radius: 5px;
+}
+#popegal, #poploose, #popwin{
+    display: none;
+}
+#close{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background-color: transparent;
+    font-size: 50px;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.global{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(106, 48, 147, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerglobal{
+    background-color: rebeccapurple;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    border-radius: 10px;
+    border: 5px solid white;
+}
+.containerglobal button{
+    font-size: 20px;
+    height: 200px;
+    width: 200px;
 }
