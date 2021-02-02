@@ -9,6 +9,7 @@ var sommeOrdi = 0;
 document.getElementById("resultOrdi").innerHTML=sommeOrdi;
 
 function main(){
+    verifwin();
     btnCiseaux.addEventListener("click", function(){game("scissors")});
     btnPierre.addEventListener("click", function(){game("rock")});
     btnFeuille.addEventListener("click", function(){game("paper")});
@@ -72,9 +73,8 @@ function game(choicePlayer) {
             document.getElementById("poploose").style.display = "none";
         }, 2000);
     }else{
-        console.log("Error.")
+        console.log("Error.");
     }
-    verifwin();
 }
 
 function verifwin() {
