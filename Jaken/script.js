@@ -2,10 +2,10 @@ const btnCiseaux = document.getElementById("ciseaux");
 const btnPierre = document.getElementById("pierre");
 const btnFeuille = document.getElementById("feuille");
 
-var sommeJoueur = 1 + 2;
+var sommeJoueur = 0;
 document.getElementById("resultJoueur").innerHTML=sommeJoueur;
 
-var sommeOrdi = 1 + 1;
+var sommeOrdi = 0;
 document.getElementById("resultOrdi").innerHTML=sommeOrdi;
 
 function main(){
@@ -17,7 +17,72 @@ function main(){
 function game(choicePlayer) {
     const choiceOrdi = ["scissors", "rock", "paper"];
     const random = Math.floor(Math.random() * choiceOrdi.length);
-    console.log(random, choiceOrdi[random]);    
+    if (choicePlayer == choiceOrdi[random]){
+        console.log("Egalité");
+        document.getElementById("popegal").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("popegal").style.display = "none";
+        }, 2000);
+    }else if(choicePlayer == "scissors" && choiceOrdi[random] == "paper"){
+        console.log("L'ordi gagne !");
+        sommeOrdi += 1;
+        document.getElementById("resultOrdi").innerHTML=sommeOrdi;
+        document.getElementById("poploose").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("poploose").style.display = "none";
+        }, 2000);
+    }else if(choicePlayer == "scissors" && choiceOrdi[random] == "rock"){
+        console.log("L'ordi gagne !");
+        sommeOrdi += 1;
+        document.getElementById("resultOrdi").innerHTML=sommeOrdi;
+        document.getElementById("poploose").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("poploose").style.display = "none";
+        }, 2000);
+    }else if(choicePlayer == "rock" && choiceOrdi[random] == "scissors"){
+        console.log("Le joueur Gagne !");
+        sommeJoueur += 1;
+        document.getElementById("resultJoueur").innerHTML=sommeJoueur;
+        document.getElementById("popwin").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("popwin").style.display = "none";
+        }, 2000);
+    }else if(choicePlayer == "rock" && choiceOrdi[random] == "paper"){
+        console.log("L'ordi gagne !");
+        sommeOrdi += 1;
+        document.getElementById("resultOrdi").innerHTML=sommeOrdi;
+        document.getElementById("poploose").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("poploose").style.display = "none";
+        }, 2000);
+    }else if(choicePlayer == "paper" && choiceOrdi[random] == "rock"){
+        console.log("Le joueur Gagne !");
+        sommeJoueur += 1;
+        document.getElementById("resultJoueur").innerHTML=sommeJoueur;
+        document.getElementById("popwin").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("popwin").style.display = "none";
+        }, 2000);
+    }else if(choicePlayer == "paper" && choiceOrdi[random] == "scissors"){
+        console.log("L'ordi gagne !");
+        sommeOrdi += 1;
+        document.getElementById("resultOrdi").innerHTML=sommeOrdi;
+        document.getElementById("poploose").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("poploose").style.display = "none";
+        }, 2000);
+    }else{
+        console.log("Error.")
+    }
+    verifwin();
+}
+
+function verifwin() {
+    if(sommeJoueur == 10){
+        console.log("Le joueur à gagné !");
+    }else if(sommeOrdi == 10){
+        console.log("L'ordi a gagné...");
+    }
 }
 
 main();
