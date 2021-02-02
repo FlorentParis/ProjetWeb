@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>JustePrix</title>
+</head>
+<body>
+<div id="TourJoueur">
+    <h1>Premier Tour</h1>
+    <span>Vous devez trouver le nombre mystère donné par l'ordinateur, essayer de faire le moins de tour possible! </span><br>
+    <input type="number" id="number">
+    <input type="submit" id="btn1" value="confirmer">
+    <p id="info"></p>
+</div>
+
+<div id="btnSuivant" style="display: none">
+    <input type="submit" id="btn2" value="suivant">
+</div>
+
+<div id="TourOrdinateur" style="display: none">
+    <h1>Deuxieme tour :</h1>
+    <span>Entrez un nombre et l'ordinateur essayera de le trouver</span>
+    <input type="number" id="number2">
+    <input type="submit" id="btn3" value="envoyer">
+</div>
+
+<div id="gagne" style="display: none">
+    GGGGGG!!!
+</div>
+
+<div id="perdu" style="display: none">
+    LOOOOSER!!
+</div>
+<script type="text/javascript" src="JustePrix.js"></script>
+</body>
+</html>
