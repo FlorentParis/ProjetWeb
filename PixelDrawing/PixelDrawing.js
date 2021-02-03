@@ -1,4 +1,4 @@
-var penColour = 'white';
+var penColour = 'black';
 
 connectEventListener();
 
@@ -8,8 +8,8 @@ function setPixelColour(event)
     console.log(event.target);
 }
 
-/*La méthode addEventListener permet à un élément de réagir d'une certaines maniere (fonction callback) en fonction de l'action de l'utilisateur (type)
-exemple : On veut que le background change de couleur lorsqu'on clique sur le btn
+/*La méthode addEventListener permet à un élément de réagir d'une certaine maniere (fonction callback) en fonction de l'action de l'utilisateur (type)
+exemple : On veut que le background change de couleur lorsqu'on clique sur le bouton
     <input type="button" id="exemple">
     <script>
         var ex = document.getElementById("exemple");
@@ -26,16 +26,15 @@ function connectEventListener () {
     console.log(elements);
     // foreach syntaxe : arr.forEach(callback)
     elements.forEach(element => element.addEventListener("click", setPixelColour));
-    /*Ici le callbackfn : element => element.addEventListener("click", setPxelColour) est une fonction return...Ca revient à faire :
+    /*Ici le callbackfn : element => element.addEventListener("click", setPixelColour) est une fonction return...Ca revient à faire :
      elements.forEach(changeColorOnClick, element);
      function changeColorOnClick(element){
-       return element.addEventListener("click", setPixerColour);
+        return element.addEventListener("click", setPixerColour);
      }
     */
 }
 
-function setColorValue(event){
+function setColorValue(event) {
     event.preventDefault();
     penColour = event.target.value;
 }
-
