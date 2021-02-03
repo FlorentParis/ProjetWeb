@@ -8,7 +8,7 @@
     <title>Mastermind</title>
 </head>
 <body>
-    <table>
+    <table class="abc">
         <thead>
             <tr>
                 <th colspan="8">Mastermind !</th>
@@ -142,15 +142,14 @@
         </tbody>
     </table>
     <div class="commandes">
-        <button class="ping btnred">Rouge</button>
-        <button class="ping btnYellow">Jaune</button>
-        <button class="ping btnGreen">Vert</button>
-        <button class="ping btnBlue">Bleu</button>
-        <button class="ping btnOrange">Orange</button>
-        <button class="ping btnPurple">Violet</button>
+        <button class="ping btnred" onclick="game('rouge')">Rouge</button>
+        <button class="ping btnYellow" onclick="game('jaune')">Jaune</button>
+        <button class="ping btnGreen" onclick="game('vert')">Vert</button>
+        <button class="ping btnBlue" onclick="game('bleu')">Bleu</button>
+        <button class="ping btnOrange" onclick="game('orange')">Orange</button>
+        <button class="ping btnPurple" onclick="game('violet')">Violet</button>
     </div>
     <div class="commandes2">
-        <button>Valider.</button>
         <button><a href="mastermind.html">Restart.</a></button>
     </div>
 </body>
