@@ -8,6 +8,10 @@ function setPixelColour(event)
     console.log(event.target);
 }
 
+function reloadPage(){
+    window.location.reload();
+ }
+
 /*La méthode addEventListener permet à un élément de réagir d'une certaine maniere (fonction callback) en fonction de l'action de l'utilisateur (type)
 exemple : On veut que le background change de couleur lorsqu'on clique sur le bouton
     <input type="button" id="exemple">

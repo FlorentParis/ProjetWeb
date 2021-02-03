@@ -1,11 +1,10 @@
 #grille {
     display: table;
-    border-spacing: 1px;
-    background-color: black;
+    border-spacing: 0px;
     border: 5px solid black;
     position: relative;
     left: 33%;
-    margin-top: 1px;
+    margin-top: 5px;
 }
 
 .ligne {
@@ -14,7 +13,8 @@
 
 .pixel {
     display: table-cell;
-    background-color: white;
+    border: 1px solid black;
+    margin: 0;
     width: 35px;
     height: 35px;
 }
