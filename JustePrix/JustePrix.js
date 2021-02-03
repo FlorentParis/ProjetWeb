@@ -3,7 +3,11 @@ const getRandom = () => Math.floor(Math.random() * (100 -1) +1);
 var tourJoueur = 0;
 var tourOrdi = 0;
 var random = getRandom();
+var randomOrdi = getRandom();
 console.log(random);
+var max = 100;
+var mini = 1;
+var echec = [];
 
 const btn1 = document.getElementById("btn1");
 btn1.addEventListener("click", confirmer)
@@ -12,7 +16,12 @@ const btn2 = document.getElementById("btn2");
 btn2.addEventListener("click", suivant);
 
 const btn3 = document.getElementById("btn3");
+const btn4 = document.getElementById("btn4");
 btn3.addEventListener("click", getTourOrdi);
+btn4.addEventListener("click", getTourOrdi);
+
+const btn5 = document.getElementById("trouve");
+btn5.addEventListener("click", final);
 
 /* function getRandom(){
 return MAth.floor(MAth.radnom() + (100-1)+1);
@@ -43,24 +52,37 @@ function confirmer(e){
 function suivant(){
     document.getElementById("btnSuivant").style.display="none";
     afficheDiv("TourJoueur", "TourOrdinateur");
+    document.getElementById("randomOrdi").innerHTML="L'ordinateur a trouvé "+ randomOrdi;
 }
 
-function getTourOrdi(){
-    document.getElementById("btnSuivant").style.display="none";
-    let randomJoueur = parseInt(document.getElementById("number2").value);
-    let nbOrdi = getRandom();
-    while(nbOrdi !== randomJoueur){
-        if (nbOrdi > randomJoueur){
-            nbOrdi = Math.floor(Math.random() * (nbOrdi -1) +1);
-        }else{
-            nbOrdi = Math.floor(Math.random() * (100 -nbOrdi) +1)
-        }
+function getTourOrdi(e) {
+    const valeur = e.target.value;
+    document.getElementById("btnSuivant").style.display = "none";
+    console.log(randomOrdi);
+    if(!echec.includes(randomOrdi)){
         tourOrdi++;
-        console.log(tourOrdi);
+        echec.push(randomOrdi);
+        if(valeur === "grand"){
+            mini = randomOrdi;
+            randomOrdi = Math.floor(Math.random()* (max - mini)+mini);
+            document.getElementById("randomOrdi").innerHTML="L'ordinateur a trouvé "+ randomOrdi;
+        }else{
+            max = randomOrdi;
+            randomOrdi = Math.floor(Math.random()* (max - mini)+mini);
+            document.getElementById("randomOrdi").innerHTML="L'ordinateur a trouvé "+ randomOrdi;
+        }
+        //Todo btn_reset + doublons de random
     }
-    if (tourOrdi > tourJoueur){
-        afficheDiv("TourOrdinateur", "gagne");
+    console.log(tourOrdi, randomOrdi, echec)
+
+}
+
+function final(){
+    if(tourOrdi > tourJoueur){
+        document.getElementById("gagne").style.display="block";
+    }else if (tourOrdi < tourJoueur){
+        document.getElementById("perdu").style.display="block";
     }else{
-        afficheDiv("TourOrdinateur", "perdu");
+        document.getElementById("egalite").style.display="block";
     }
 }
