@@ -8,7 +8,6 @@ let selection = [];
 let choix = ["rouge", "jaune", "vert", "bleu", "orange", "violet"];
 let testRow = 0;
 let testPropo = 0;
-let testCorrec = 0;
 let blanc = 0;
 let noir = 0;
 
@@ -23,16 +22,12 @@ function createSolution() {
 /* Fonction comparaison selection / Solution */
 function noir_blanc(selection, solution) {
     for(let i = 0; i < selection.length; i++){
-        if(solution.includes(selection[i])){
-            if(selection[i] === solution[i]){
-                noir++;
-                row[testRow]>correc[testCorrec].classList.add("noir");
-                testCorrec += 1;
-            }else{
-                blanc++;
-                row[testRow]>correc[testCorrec].classList.add("blanc");
-                testCorrec += 1;
-            }
+        if(selection[i] === solution[i]){
+            noir++;
+        }else if(solution.includes(selection[i])){
+            blanc++;
+        }else{
+            console.log("Rien.")
         }
     }
     console.log("bonne place : ", noir,"mauvaise place", blanc);
@@ -52,14 +47,14 @@ function newTour() {
     noir = 0;
     blanc = 0;
     selection = [];
-    testRow += 1;
 }
 
 function game(couleurPropo) {
     if(selection.length <4){
         selection.push(couleurPropo);
-        row[testRow]>propo[testPropo].classList.add(couleurPropo);
-        testPropo += 1;
+        console.log(row[testRow].propo[testPropo]);
+        console.log(couleurPropo);
+        row[testRow].propo[testPropo].style.backgroundColor = couleurPropo;
     }else{
         noir_blanc(selection, solution);
         verifWin();
