@@ -1,7 +1,7 @@
 const getRandom = () => Math.floor(Math.random() * (100 -1) +1);
 
 var tourJoueur = 0;
-var tourOrdi = 0;
+var tourOrdi = 1;
 var random = getRandom();
 var randomOrdi = getRandom();
 console.log(random);
@@ -71,7 +71,7 @@ function getTourOrdi(e) {
             randomOrdi = Math.floor(Math.random()* (max - mini)+mini);
             document.getElementById("randomOrdi").innerHTML="L'ordinateur a trouvé "+ randomOrdi;
         }
-        //Todo btn_reset + doublons de random
+        //Todo btn_reset
     }
     console.log(tourOrdi, randomOrdi, echec)
 
