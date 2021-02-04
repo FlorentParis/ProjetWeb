@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background:linear-gradient(#0E2145,#7E3453,#E94760) ;
+    height: 100%;
+}
+.images {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: teal;
+}
+/*.images {
+    height: auto;
+    grid-template-rows: auto;
+}*/
+span{
+    font-family:"Press Start 2P";
+    color: white;
+    font-size: 1.5vw;
+    text-align: center;
+}
+img {
+    width: 325px;
+    height: 200px;
+    border-radius: 15px;
+    padding: 5%;
+}
+#snake {
+    background-color: yellow;
+    width: 100%;
+    height: 50vh;
+}
