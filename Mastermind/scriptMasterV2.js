@@ -4,7 +4,7 @@ let correc = document.getElementsByClassName("correc");
 let ping = document.getElementsByClassName("ping");
 let win = false;
 const solution = [];
-let selection = ["rouge", "jaune", "vert", "bleu"];
+let selection = [];
 let choix = ["rouge", "jaune", "vert", "bleu", "orange", "violet"];
 let test = 0;
 let blanc = 0;
@@ -21,24 +21,42 @@ function createSolution() {
 /* Fonction comparaison selection / Solution */
 function noir_blanc(selection, solution) {
     for(let i = 0; i < selection.length; i++){
-        if(solution.includes(selection[i])){
-            if(selection[i] === solution[i]){
-                noir++;
-            }else{
-                blanc++;
-            }
+        if(selection[i] === solution[i]){
+            noir++;
+        }else if(solution.includes(selection[i])){
+            blanc++;
+        }else{
+            console.log("Rien.")
         }
     }
     console.log("bonne place : ", noir,"mauvaise place", blanc);
 }
 
-function game() {
-    createSolution();
-    noir_blanc(selection, solution);
-
-    for (var i = 0; i < ping.length; i++){
-        ping[i].addEventListener('click', );
+function verifWin() {
+    if(noir == 4){
+        console.log(noir);
+        console.log("win");
+    }else{
+        console.log("pas de win");
     }
 }
 
-game();
+function newTour() {
+    console.log(selection);
+    noir = 0;
+    blanc = 0;
+    selection = [];
+}
+
+function game(couleurPropo) {
+    if(selection.length <4){
+        selection.push(couleurPropo);
+        document.getElementsByClassName("table.abc>tbody>tr.row:nth-of-type(12)>td:nth-of-type(1)").style.backgroundColor = "red";
+    }else{
+        noir_blanc(selection, solution);
+        verifWin();
+        newTour();
+    }
+}
+
+createSolution();
