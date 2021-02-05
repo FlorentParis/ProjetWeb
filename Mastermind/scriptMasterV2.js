@@ -12,6 +12,24 @@ let testCorrec = 0;
 let blanc = 0;
 let noir = 0;
 
+const red = document.getElementById("btnRouge");
+red.addEventListener("click", game)
+
+const yellow = document.getElementById("btnJaune");
+yellow.addEventListener("click", game)
+
+const green = document.getElementById("btnVert");
+green.addEventListener("click", game)
+
+const blue = document.getElementById("btnBleu");
+blue.addEventListener("click", game)
+
+const orange = document.getElementById("btnOrange");
+orange.addEventListener("click", game);
+
+const violet = document.getElementById("btnViolet");
+violet.addEventListener("click", game);
+
 /* Fonction Creation de la solution / Code à trouver */
 function createSolution() {
     for(let i = 0; i < 4; i++){
@@ -58,16 +76,23 @@ function newTour() {
 }
 
 /* Fonction appelé a chaque bouton cliqué, une fois la liste pleine, on verifie */
-function game(couleurPropo) {
+function game(e) {
+    var color = e.target.value;
     if(selection.length <4){
-        selection.push(couleurPropo);
-        row[testRow]>propo[testPropo].classList.add(couleurPropo);
+        selection.push(color);
+        row[testRow]>propo[testPropo].classList.add(color);
         testPropo += 1;
-    }else{
+    }
+    if(selection.length>=4){
+        document.getElementById("valider").style.display="block";
+        var valider = document.getElementById("valider");
+        valider.addEventListener("click", noir_blanc)
+        /*
         noir_blanc(selection, solution);
         verifWin();
-        newTour();
+        newTour();*/
     }
 }
+
 
 createSolution();
