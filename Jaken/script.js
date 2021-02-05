@@ -1,7 +1,7 @@
 const btnCiseaux = document.getElementById("ciseaux");
 const btnPierre = document.getElementById("pierre");
 const btnFeuille = document.getElementById("feuille");
-//todo fonction verif win
+
 var sommeJoueur = 0;
 document.getElementById("resultJoueur").innerHTML=sommeJoueur;
 
@@ -79,7 +79,7 @@ function game(choicePlayer) {
     verifwin()
 
 }
-
+// TODO revoir l'affichage de winGlobal et looseGlobal
 function verifwin() {
     console.log("verif"+sommeJoueur, sommeOrdi)
     if(sommeJoueur > sommeOrdi && sommeJoueur === 10){
