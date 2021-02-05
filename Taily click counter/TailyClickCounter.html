@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Taily Click Counter</title>
+    <script src="C:\wamp64\www\Projet Front End\Taily click counter\TailyClickCounter.JS" defer></script>
+  </head>
+
+  <body>
+    <h1 >Click Counter</h1>
+
+    <div class="main">
+      <input type="button" id = "button1" value ="+1" onclick="Somme()">
+      <br>
+      <input id="Resultat" value ="0 : 0 : 0 : 0">
+      <input type="button" id="Reset" value ="Reset" onclick="Reset()">
+    </div>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27');
+      h1{
+        position: absolute;
+        right: 27%;
+        top: 12%;
+        font-size: 80px;
+        color: rgba(255,255,255,1);
+        font-family: 'Press Start 2P';
+      }
+      html{
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(180deg, #0E2145 23.96%, #7E3453 51.04%, #E94760 100%);
+      }
+      div{
+        position:absolute;
+        left: 36.5%;
+        top: 33%;
+        width: 200px;
+        height: 200px;
+        margin-left: -100px; 
+        margin-top: -100px; 
+      }
+      #Resultat{
+        padding: 30px;
+        width: 860px;
+        height: 320px;
+        background-color : black  ;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 110px;
+        border: 50px solid rgb(24, 23, 23); 
+        color:  white;
+      }
+      #button1 {
+        position:absolute;
+        left: 293%;
+        top: 58%;
+        margin-left: -100px; 
+        margin-top: -100px; 
+        background-color: rgb(161, 161, 161);
+        border: rgb(102, 102, 102);
+        border-radius: 100%;
+        padding: 15px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: 15pt;
+      }
+      #Reset {
+        position:absolute;
+        left: 550%;
+        top: 168%;
+        margin-left: -100px; 
+        margin-top: -100px; 
+        background-color: rgb(161, 161, 161);
+        border: rgb(102, 102, 102);
+        border-radius: 100%;
+        padding: 15px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: 15pt;
+      }
+    </style>
+  </body>
+</html>
