@@ -42,7 +42,7 @@ function connectEventListener ()
     */
     
     const pipette = document.getElementById("pipette");
-    pipette.addEventListener("click", fnPipette());
+    pipette.addEventListener("click", fnPipette);
 }
 
 function setColorValue(event)

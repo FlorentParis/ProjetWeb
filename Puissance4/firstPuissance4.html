@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Puissance 4</title>
+        <script src="fonctionP4.JS" defer></script>
+    </head>
+    <style>
+        .button{
+            background-color: rgb(161, 161, 161);
+            border: rgb(102, 102, 102);
+            border-radius: 100%;
+            padding: 28px;
+            font-family: 'Courier New', Courier, monospace;           
+            font-weight: bold;
+            font-size: 15pt;
+            cursor : pointer;
+        }
+        html{
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #0E2145 23.96%, #7E3453 51.04%, #E94760 100%);
+        }
+        #game table {
+            border: 3px blue outset;
+            background-color: blue;
+        }
+        #game td {
+            width: 4cm;
+            height: 4cm;
+            border: 2px blue inset;
+            border-radius: 2cm;
+            background-color: rgb(255, 255, 255);
+            z-index: 1;
+        }
+
+        #game .joueur1 {
+            background-color:red;
+        }
+        #game .joueur2 {
+            background-color: yellow;
+        }
+
+    </style>
+    <body>
+        <div id="game">
+              <table id = "ElTablo" align="center">
+                <tr>
+                    <td id = "n60"></td>
+                    <td id = "n61"></td>
+                    <td id = "n62"></td>
+                    <td id = "n63"></td>
+                    <td id = "n64"></td>
+                    <td id = "n65"></td>
+                    <td id = "n66"></td>
+                </tr>
+                <tr>
+                    <td id = "n50"></td>
+                    <td id = "n51"></td>
+                    <td id = "n52"></td>
+                    <td id = "n53"></td>
+                    <td id = "n54"></td>
+                    <td id = "n55"></td>
+                    <td id = "n56"></td>
+                </tr>
+                <tr>
+                    <td id = "n40"></td>
+                    <td id = "n41"></td>
+                    <td id = "n42"></td>
+                    <td id = "n43"></td>
+                    <td id = "n44"></td>
+                    <td id = "n45"></td>
+                    <td id = "n46"></td>
+                </tr>
+                <tr>
+                    <td id = "n30"></td>
+                    <td id = "n31"></td>
+                    <td id = "n32"></td>
+                    <td id = "n33"></td>
+                    <td id = "n34"></td>
+                    <td id = "n35"></td>
+                    <td id = "n36"></td>
+                </tr>
+                <tr>
+                    <td id = "n20"></td>
+                    <td id = "n21"></td>
+                    <td id = "n22"></td>
+                    <td id = "n23"></td>
+                    <td id = "n24"></td>
+                    <td id = "n25"></td>
+                    <td id = "n26"></td>
+                </tr>
+                <tr>
+                    <td id = "n10"></td>
+                    <td id = "n11"></td>
+                    <td id = "n12"></td>
+                    <td id = "n13"></td>
+                    <td id = "n14"></td>
+                    <td id = "n15"></td>
+                    <td id = "n16"></td>
+                </tr>
+            </table>   
+        </div>
+
+        <div id=GroupeBouton align=center>
+            <input type="button" class="button" value ="Colonne1" onclick="colonne1()">
+            <input type="button" class="button" value ="Colonne2" onclick="colonne2()">
+            <input type="button" class="button" value ="Colonne3" onclick="colonne3()">
+            <input type="button" class="button" value ="Colonne4" onclick="colonne4()">
+            <input type="button" class="button" value ="Colonne5" onclick="colonne5()">
+            <input type="button" class="button" value ="Colonne6" onclick="colonne6()">
+            <input type="button" class="button" value ="Colonne7" onclick="colonne7()">
+        </div>
+    </body>
+</html>
