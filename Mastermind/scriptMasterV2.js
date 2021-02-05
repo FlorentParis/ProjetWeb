@@ -4,7 +4,7 @@ let correc = document.getElementsByClassName("correc");
 let ping = document.getElementsByClassName("ping");
 let win = false;
 const solution = [];
-let selection = [];
+var selection = [];
 let choix = ["rouge", "jaune", "vert", "bleu", "orange", "violet"];
 let testRow = 0;
 let testPropo = 0;
@@ -30,6 +30,8 @@ orange.addEventListener("click", game);
 const violet = document.getElementById("btnViolet");
 violet.addEventListener("click", game);
 
+createSolution();
+
 /* Fonction Creation de la solution / Code à trouver */
 function createSolution() {
     for(let i = 0; i < 4; i++){
@@ -39,21 +41,24 @@ function createSolution() {
 }
 
 /* Fonction comparaison selection / Solution */
-function noir_blanc(selection, solution) {
+function noir_blanc() {
+    console.log(testRow)
     for(let i = 0; i < selection.length; i++){
         if(solution.includes(selection[i])){
             if(selection[i] === solution[i]){
                 noir++;
                 row[testRow]>correc[testCorrec].classList.add("noir");
-                testCorrec += 1;
+                testCorrec++;
             }else{
                 blanc++;
                 row[testRow]>correc[testCorrec].classList.add("blanc");
-                testCorrec += 1;
+                testCorrec++;
             }
         }
     }
     console.log("bonne place : ", noir,"mauvaise place", blanc);
+    verifWin();
+
 }
 
 /* Fonction verification si Win / Noir = 4 */
@@ -62,6 +67,7 @@ function verifWin() {
         console.log(noir);
         console.log("win");
     }else{
+        newTour();
         console.log("pas de win");
     }
 }
@@ -73,6 +79,7 @@ function newTour() {
     blanc = 0;
     selection = [];
     testRow += 1;
+    document.getElementById("valider").style.display="none";
 }
 
 /* Fonction appelé a chaque bouton cliqué, une fois la liste pleine, on verifie */
@@ -95,4 +102,3 @@ function game(e) {
 }
 
 
-createSolution();
