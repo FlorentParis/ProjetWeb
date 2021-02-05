@@ -38,6 +38,7 @@ function noir_blanc(selection, solution) {
     console.log("bonne place : ", noir,"mauvaise place", blanc);
 }
 
+/* Fonction verification si Win / Noir = 4 */
 function verifWin() {
     if(noir == 4){
         console.log(noir);
@@ -47,6 +48,7 @@ function verifWin() {
     }
 }
 
+/* Reinitialisation  de tout pour la nouvelle rangé */
 function newTour() {
     console.log(selection);
     noir = 0;
@@ -55,6 +57,7 @@ function newTour() {
     testRow += 1;
 }
 
+/* Fonction appelé a chaque bouton cliqué, une fois la liste pleine, on verifie */
 function game(couleurPropo) {
     if(selection.length <4){
         selection.push(couleurPropo);
