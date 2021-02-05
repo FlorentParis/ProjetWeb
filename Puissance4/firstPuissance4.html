@@ -5,6 +5,43 @@
         <title>Puissance 4</title>
         <script src="fonctionP4.JS" defer></script>
     </head>
+    <style>
+        .button{
+            background-color: rgb(161, 161, 161);
+            border: rgb(102, 102, 102);
+            border-radius: 100%;
+            padding: 28px;
+            font-family: 'Courier New', Courier, monospace;           
+            font-weight: bold;
+            font-size: 15pt;
+            cursor : pointer;
+        }
+        html{
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #0E2145 23.96%, #7E3453 51.04%, #E94760 100%);
+        }
+        #game table {
+            border: 3px blue outset;
+            background-color: blue;
+        }
+        #game td {
+            width: 4cm;
+            height: 4cm;
+            border: 2px blue inset;
+            border-radius: 2cm;
+            background-color: rgb(255, 255, 255);
+            z-index: 1;
+        }
+
+        #game .joueur1 {
+            background-color:red;
+        }
+        #game .joueur2 {
+            background-color: yellow;
+        }
+
+    </style>
     <body>
         <div id="game">
               <table id = "ElTablo" align="center">
@@ -74,43 +111,5 @@
             <input type="button" class="button" value ="Colonne6" onclick="colonne6()">
             <input type="button" class="button" value ="Colonne7" onclick="colonne7()">
         </div>
-
-        <style>
-            .button{
-                background-color: rgb(161, 161, 161);
-                border: rgb(102, 102, 102);
-                border-radius: 100%;
-                padding: 28px;
-                font-family: 'Courier New', Courier, monospace;           
-                font-weight: bold;
-                font-size: 15pt;
-                cursor : pointer;
-            }
-            html{
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(180deg, #0E2145 23.96%, #7E3453 51.04%, #E94760 100%);
-            }
-            #game table {
-                border: 3px blue outset;
-                background-color: blue;
-            }
-            #game td {
-                width: 4cm;
-                height: 4cm;
-                border: 2px blue inset;
-                border-radius: 2cm;
-                background-color: rgb(255, 255, 255);
-                z-index: 1;
-            }
-
-            #game .joueur1 {
-                background-color:red;
-            }
-            #game .joueur2 {
-                background-color: yellow;
-            }
-
-        </style>
     </body>
 </html>
