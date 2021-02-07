@@ -47,14 +47,6 @@ function jeu() {
 
 jeu()
 
-
-
-
-
-
-
-
-
 function win() {
 
 }

@@ -22,6 +22,7 @@ h1{
     margin-bottom: 50px;
 }
 ul{
+    margin-top: 20px;
     color: #fff;
     font-size: 24px;
     text-align: center;
@@ -49,20 +50,20 @@ li a:hover{
     justify-content: center;
     align-items: center;
 }
-img{
-    height: 50vh;
+#topright img{
+    height: 40vh;
     margin-bottom: 20px;
 }
 #botright{
     display: flex;
 }
 #botright span{
-    font-size: 36px;
+    font-size: 30px;
     color: #fff;
 }
 .cote{
-    height: 36px;
-    width: 150px;
+    height: 30px;
+    width: 80px;
     background-color: #fff;
     margin: 0 10px 0 10px;
 }
@@ -78,3 +79,27 @@ img{
 #start a:hover{
     color: #FFE350;
 }
+#infos{
+    position: fixed;
+    width: 10vh;
+    bottom: 10px;
+    left: 10px;
+}
+#infos:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    h1, ul, #botright span, #start{
+        font-size: 20px;
+    }
+    .cote{
+        height: 20px;
+    }
+    #topright{
+        display: none;
+    }
+    #center{
+        flex-direction: column;
+    }
+  }
