@@ -1,48 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
-html {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #0E2145 23.96%, #7E3453 51.04%, #E94760 100%);
-}
-
-.fond {
-    position: fixed;
-    width: 820px;
-    height: 845px;
-    left: 28.5%;
-    top: 82px;
-    background: rgb(161, 161, 161);
-    border-radius: 3%;
-    border: rgb(102, 102, 102);
+body {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(#554562, #102246);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
-    top: -125px;
-    height: 10px;
-    width: 1000px;
-    position: absolute;
+    margin: 0;
     font-family: 'Press Start 2P';
     font-size: 64px;
     color: white;
     border-color: black;
 }
 
-body {
-    position: absolute;
-    top: 85px;
-    left: 30%;
-    width: auto;
-}
-
 #grille {
     display: table;
     border-spacing: 0px;
     border: 5px solid black;
-    position: relative;
-    top: 50px;
-    margin-top: 5px;
+}
+
+#bord {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 750px;
+    border-radius: 3%;
+    border: 30px solid rgb(161, 161, 161);
+    background-color: rgb(161, 161, 161);
 }
 
 .ligne {
@@ -57,29 +48,17 @@ body {
     height: 35px;
 }
 
-.pinceau {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 2px solid black;
-}
-
 #palette {
-    position: absolute;
-    left: 22%;
-    margin-top: 20px;
     font-family: 'Orbitron';
     font-size: 17px;
     font-weight: bold;
-    top: -5px;
 }
 
 input[type="color"] {
-    position: relative;
-    margin-bottom: 3px;
     width: 100px;
     height: 19px;
-    top: 1px;
+    position: relative;
+    top: 0.5px;
 }
 
 input {
@@ -88,12 +67,5 @@ input {
     height: 23px;
     text-align: center;
     font-weight: bold;
-}
-
-#gris {
-    background-color: rgb(84, 84, 84);
-}
-
-#vert {
-    background-color: rgb(37, 225, 157);
+    margin-bottom: 5px;
 }
