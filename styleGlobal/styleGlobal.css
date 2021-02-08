@@ -1,0 +1,23 @@
+#info{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    height: 75px;
+    width: 75px;
+    background-color: transparent;
+    border: none;
+}
+#close{
+    position: fixed;
+    right: 20px;
+    top: 5px;
+    background-color: transparent;
+    font-size: 50px;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+#close > a{
+    text-decoration: none;
+    color: white;
+}

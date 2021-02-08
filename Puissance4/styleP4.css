@@ -1,0 +1,42 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    background: radial-gradient(#554562, #102246);
+}
+.button{
+    margin: 22px;
+    background-color: rgb(239, 255, 19);
+    color: red;
+    border: rgb(102, 102, 102);
+    border-radius: 100%;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;           
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    cursor : pointer;
+}
+#game table {
+    border: 3px blue outset;
+    border-radius: 10px;
+    background-color: #0066ff;
+}
+#game td {
+    width: 80px;
+    height: 80px;
+    border: 2px blue inset;
+    border-radius: 2cm;
+    background-color: rgb(255, 255, 255);
+}
+
+#game .joueur1 {
+    background-color:red;
+}
+#game .joueur2 {
+    background-color: yellow;
+}
