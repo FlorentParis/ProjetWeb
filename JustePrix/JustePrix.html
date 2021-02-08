@@ -6,39 +6,44 @@
     <link rel="stylesheet" href="JustePrix.css">
 </head>
 <body>
-<div id="TourJoueur">
+<section id="TourJoueur">
     <h1>Premier Tour</h1>
     <span>Vous devez trouver le nombre mystère donné par l'ordinateur, essayer de faire le moins de tour possible! </span><br>
-    <input type="number" id="number">
-    <input type="submit" id="btn1" value="confirmer">
-    <p id="info"></p>
-    <div id="btnSuivant" style="display: none">
-        <input type="submit" id="btn2" value="suivant">
+    <input type="number" id="nombre" required>
+        <button id="btnConfirmer" value="confirmer">Confirmer</button>
+    <div id="info"></div>
+    <div id="tourSuivant" style="display: none">
+        <p id="message"></p>
+        <button id="btnSuivant" value="suivant">Suivant</button>
     </div>
-</div>
+</section>
 
-<div id="TourOrdinateur" style="display: none">
+<section id="TourOrdinateur" style="display: none">
     <h1>Deuxieme tour :</h1>
-    <!--change algo -->
-    <p id="randomOrdi"></p><br>
+    <p id="aleaOrdi"></p><br>
     Votre nombre est plus:
-    <input type="submit" id="btn3" value="grand">
-    <input type="submit" id="btn4" value="petit"><br>
-    <input type="submit" id="trouve" value="trouvé">
-</div>
-<div>
+    <button id="btnGrand" value="grand">Grand</button>
+    <button id="btnPetit" value="petit">Petit</button><br>
+    <button id="btnTrouve" value="trouvé">Trouvé</button>
+    <button id="btnRefresh">Refresh</button>
+</section>
+
+<section id="fin">
     <div id="gagne" style="display: none">
         GGGGGG!!!
+        <a href="JustePrix.html">Recommencer</a>
     </div>
 
     <div id="perdu" style="display: none">
         LOOOOSER!!
+        <a href="JustePrix.html">Recommencer</a>
     </div>
 
     <div id="egalite" style="display: none">
         Egalité
+        <a href="JustePrix.html">Recommencer</a>
     </div>
-</div>
+</section>
 
 <script type="text/javascript" src="JustePrix.js"></script>
 </body>

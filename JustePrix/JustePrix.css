@@ -1,5 +1,76 @@
-body{
+body {
+    color:black;
+    font-family: "Questrial", sans-serif;
+    background-color: rebeccapurple;
+    background-image: linear-gradient(
+            45deg,
+            lightslategray 25%,
+            transparent 25%,
+            transparent 75%,
+            lightslategray 75%,
+            lightslategray
+    ),
+    linear-gradient(
+            -45deg,
+            lightslategray 25%,
+            transparent 25%,
+            transparent 75%,
+            lightslategray 75%,
+            lightslategray
+    );
+    background-size: 60px 60px;
     display: flex;
     justify-content: center;
+}
+
+#TourJoueur, #TourOrdinateur{
+    width: 70%;
     align-items: center;
+    padding: 1.6rem 3rem;
+    border: 3px solid black;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+button {
+    color:inherit;
+    font-family:inherit;
+    font-size: inherit;
+    background: white;
+    padding: 0.3rem 3.4rem;
+    border: 3px solid black;
+    margin-right: 2.6rem;
+    box-shadow: 0 0 0 black;
+    transition: all 0.2s;
+}
+
+button:last-child {
+    margin: 0;
+}
+
+button:hover {
+    box-shadow: 0.4rem 0.4rem 0 black;
+    transform: translate(-0.4rem, -0.4rem);
+}
+
+button:active {
+    box-shadow: 0 0 0 black;
+    transform: translate(0, 0);
+}
+
+#tourSuivant {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.6rem 3rem;
+    border: 3px solid black;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
