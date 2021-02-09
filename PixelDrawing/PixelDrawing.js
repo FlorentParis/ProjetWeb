@@ -1,77 +1,59 @@
-var penColor = 'black';
+/* Sources d'aide:
+* https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/color ==> Détecter le changement de couleur
+* https://css-tricks.com/converting-color-spaces-in-javascript/ ==> Conversion rgb en hexa
+* https://developer.mozilla.org/fr/docs/Web/API/EventTarget/removeEventListener ==> enlever un eventListerner
+* https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/L_op%C3%A9rateur_conditionnel ==> condition ternaire
+* */
 
-connectEventListener();
+var couleurStylo = '#000000';
+var couleurInput = document.getElementById("inputCouleur");
+couleurInput.addEventListener("change", affecterValeurCouleur);
 
-function setPixelColor(event)
-{
-    event.target.style.backgroundColor = penColor;
-    console.log(event.target);
-}
+const pixels = document.querySelectorAll("div.pixel");
+//Pour chaque case / pixel cliqué on lance la fonction affecterCouleurPixel
+pixels.forEach(pixel => pixel.addEventListener("click", affecterCouleurPixel));
 
-function reset()
-{
-    const pixels = document.querySelectorAll("div.pixel");
-    pixels.forEach(pixel => pixel.style.backgroundColor = "white");
-}
-/*La méthode addEventListener permet à un élément de réagir d'une certaine maniere (fonction callback) en fonction de l'action de l'utilisateur (type)
-exemple : On veut que le background change de couleur lorsqu'on clique sur le bouton
-    <input type="button" id="exemple">
-    <script>
-        var ex = document.getElementById("exemple");
-        ex.addEventListener("click", fonctionChangeBG); --> il faudra ensuite creer la fonction qui va changer le background pour qu'il soit fonctionnel
-    </script>
-*/
+const pipette = document.getElementById("pipette");
+pipette.addEventListener("click", fnPipette);
 
-function connectEventListener ()
-{
-    //Récupération de la valeur de l'input couleur a chaque changement de couleur
-    //https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/color ==> Détecter le changement de couleur
+const effacer = document.getElementById("effacer");
+effacer.addEventListener("click", toutEffacer);
 
-    const couleur = document.getElementById("valeurCouleur");
-    couleur.addEventListener("change", setColorValue);
-
-    const elements = document.querySelectorAll("div.pixel");
-    console.log(elements);
-    // foreach syntaxe : arr.forEach(callback)
-    elements.forEach(element => element.addEventListener("click", setPixelColor));
-    /*Ici le callbackfn : element => element.addEventListener("click", setPixelColor) est une fonction return...Ca revient à faire :
-        elements.forEach(changeColorOnClick, element);
-        function changeColorOnClick(element){
-            return element.addEventListener("click", setPixelColor);
-        }
-    */
-    
-    const pipette = document.getElementById("pipette");
-    pipette.addEventListener("click", fnPipette);
-}
-
-function setColorValue(event)
+//A chaque changement de couleur et qu'on quitte la fenetre de l'input, on récupere la valeur
+function affecterValeurCouleur(event)
 {
     event.preventDefault();
-    penColor = event.target.value;
+    couleurStylo = event.target.value;
+}
+
+//On colorise la case en question avec la couleur récupéré
+function affecterCouleurPixel(event)
+{
+    event.target.style.backgroundColor = couleurStylo;
+    console.log(event.target);
 }
 
 function fnPipette()
 {
-    const tableau = document.querySelectorAll("div.pixel");
-    tableau.forEach(pixel => pixel.removeEventListener("click", setPixelColor));
-    tableau.forEach(pixel => pixel.addEventListener("click", getPixelColor));
+    //Ici on annule l'eventListerner Click du début pour lui attribuer un autre
+    pixels.forEach(pixel => pixel.removeEventListener("click", affecterCouleurPixel));
+    pixels.forEach(pixel => pixel.addEventListener("click", recupAffectCouleurPixel));
 }
 
-function getPixelColor(event)
-{ 
-    var colorPipette = event.target.style.backgroundColor;
-    console.log(colorPipette);
+function recupAffectCouleurPixel(event)
+{
+    //récupére la couleur choisie avec la pipette
+    var couleurPipette = event.target.style.backgroundColor;
+    console.log(couleurPipette);
 
-    var couleur = document.getElementById("valeurCouleur");
-    couleur.value = rgb2hex(event.target.style.backgroundColor);
-    console.log(couleur.value)
+    //affiche la couleur choisie avec la pipette dans l'input color
+    couleurInput.value = rgb2hex(event.target.style.backgroundColor);
+    console.log(couleurInput.value)
 
-    penColor = event.target.style.backgroundColor;
-    event.target.style.backgroundColor?event.target.style.backgroundColor:'white';
-    const tableau = document.querySelectorAll("div.pixel");
-    tableau.forEach(pixel => pixel.removeEventListener("click", getPixelColor));
-    tableau.forEach(pixel => pixel.addEventListener("click", setPixelColor));
+    //change la couleur du stylo
+    couleurStylo = couleurPipette?couleurPipette:'#FFFFFF';
+    pixels.forEach(pixel => pixel.removeEventListener("click", recupAffectCouleurPixel));
+    pixels.forEach(pixel => pixel.addEventListener("click", affecterCouleurPixel));
 }
 
 
@@ -82,8 +64,8 @@ function rgb2hex(rgb){
     rgb = rgb.substr(4).split(")")[0].split(sep);
 
     let r = (+rgb[0]).toString(16),
-    g = (+rgb[1]).toString(16),
-    b = (+rgb[2]).toString(16);
+        g = (+rgb[1]).toString(16),
+        b = (+rgb[2]).toString(16);
     /* toString() est utilisé pour convertir un nombre en chaîne de caractères et toString(16) afin de convertir en hexadécimal. */
 
     if (r.length == 1) {
@@ -96,4 +78,9 @@ function rgb2hex(rgb){
         b = "0" + b;
     }
     return "#" + r + g + b;
-    }
+}
+
+function toutEffacer()
+{
+    pixels.forEach(pixel => pixel.style.backgroundColor = "#FFFFFF");
+}
