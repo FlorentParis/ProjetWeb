@@ -13,7 +13,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-button{
+#choix > button{
     margin: 0 30px;
     height: 200px;
     width: 200px;
@@ -57,20 +57,7 @@ button{
 #popegal, #poploose, #popwin{
     display: none;
 }
-#close{
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    background-color: transparent;
-    font-size: 50px;
-    border: none;
-    width: 50px;
-    height: 50px;
-}
-a{
-    text-decoration: none;
-    color: white;
-}
+
 .global{
     position: fixed;
     width: 100vw;
