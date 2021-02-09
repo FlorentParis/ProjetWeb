@@ -4,10 +4,35 @@ body {
     font-family:"Press Start 2P";
     background:radial-gradient(#554562,#102246);
     color: #FFFFFF;
+    margin: 0;
+}
+.loader {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.loader img {
+    width: 300px;
+    height: 100px;
+    background-color: green ;
+}
+.bar {
+    background-color: #FFFFFF;
+    width: 25vw;
+    height: 3vh;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+    
+}
+.grille {
     display: grid;
     grid-template-rows: 20% 60% 20%;
     height: 100vh;
-    margin: 0;
 }
 .titre {
     font-size: 1rem;
@@ -28,8 +53,9 @@ body {
     flex-direction: column;
     text-align: center;
 }
-.jeux > .repertoir > span {
+.jeux > .repertoir li {
     margin: 1rem;
+    list-style: none;
 }
 /* @media (max-width: 250px)*/ 
     .cassette {
