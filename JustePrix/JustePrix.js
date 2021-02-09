@@ -1,3 +1,10 @@
+/* Sources d'aide :
+*  https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/includes
+*  https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctions_fl%C3%A9ch%C3%A9es
+*  https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/push
+*  https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random
+* */
+
 var tourJoueur = 0;
 var tourOrdi = 1;
 var max = 100;
@@ -8,6 +15,7 @@ const getRandom = () => Math.floor(Math.random() * (max -min) +min);
 /* function getRandom(){
 return MAth.floor(MAth.random() + (100-1)+1);
 }*/
+
 var alea = getRandom(); // alea premier tour (nombre que le joueur doit trouver)
 var aleaOrdi = getRandom(); // alea deuxieme tour (nombre que l'ordi propose dans le but de trouver le nb du joueur)
 //console.log(tourJoueur);
@@ -39,7 +47,6 @@ function afficheDiv(divNone, divBlock){
 
 //Premier tour : vérifie si le joueur a deviné le nombre aléatoire de l'ordinateur
 function confirmer(e){
-    e.preventDefault();
     //console.log(alea);
     let nb = document.getElementById("nombre").value;
     if(nb === ""){
@@ -57,6 +64,7 @@ function confirmer(e){
         }
     }
 }
+
 //Affiche le nombre de tour Joueur réalisé ainsi qu'un bouton suivant pour passer au tour suivant
 function nextTour(){
     document.getElementById("tourSuivant").style.display="none";
@@ -87,8 +95,6 @@ function getTourOrdi(e) {
             aleaOrdi = Math.floor(Math.random()* (max - min)+min);
             document.getElementById("aleaOrdi").innerHTML="L'ordinateur a trouvé "+ aleaOrdi;
         }
-        /*console.log(echec);
-        console.log("min : " + min + " max : "+ max)*/
     }
 
 }

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
 body {
     margin: 0;
     height: 100vh;
-    width: 100vw; /*yeaaaaaaaaaaaaaaaaaaaaaa*/
+    width: 100vw;
     color:black;
     font-family: "Questrial", sans-serif;
     background: radial-gradient(#554562, #102246);
@@ -11,13 +14,21 @@ body {
     flex-direction: column;
 }
 #titre{
+    height: 50px;
     color:white;
+    font-family: 'Press Start 2P';
+}
+
+h2{
+    font-family: 'Orbitron';
+
 }
 /* Display none par défaut */
 #TourOrdinateur,#tourSuivant, #fin, #gagne, #perdu, #egalite{
     display: none;
 }
 
+/* https://codepen.io/Gthibaud/pen/MqpmXE */
 section{
     width:auto;
     height: auto;
@@ -50,8 +61,8 @@ button:hover {
 }
 
 button:active{
-    box-shadow: 0 5px #ffffff;
-    transform: translateY(2px);
+    box-shadow: 0 0 0 black;
+    transform: translate(0, 0);
 }
 
 #btns{
