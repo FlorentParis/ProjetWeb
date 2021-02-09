@@ -49,9 +49,7 @@ function setColorValue(event)
 {
     event.preventDefault();
     penColor = event.target.value;
-
 }
-
 
 function fnPipette()
 {
@@ -60,14 +58,42 @@ function fnPipette()
     tableau.forEach(pixel => pixel.addEventListener("click", getPixelColor));
 }
 
-
 function getPixelColor(event)
 { 
-    var colorPipette = event.target.backgroundColor;
+    var colorPipette = event.target.style.backgroundColor;
     console.log(colorPipette);
+
+    var couleur = document.getElementById("valeurCouleur");
+    couleur.value = rgb2hex(event.target.style.backgroundColor);
+    console.log(couleur.value)
+
     penColor = event.target.style.backgroundColor;
     event.target.style.backgroundColor?event.target.style.backgroundColor:'white';
     const tableau = document.querySelectorAll("div.pixel");
     tableau.forEach(pixel => pixel.removeEventListener("click", getPixelColor));
     tableau.forEach(pixel => pixel.addEventListener("click", setPixelColor));
 }
+
+
+/* Voici le site où nous avons trouvé la fonction qui suit :https://css-tricks.com/converting-color-spaces-in-javascript/ */
+function rgb2hex(rgb){
+
+    let sep = rgb.indexOf(",") > -1 ? "," : " ";
+    rgb = rgb.substr(4).split(")")[0].split(sep);
+
+    let r = (+rgb[0]).toString(16),
+    g = (+rgb[1]).toString(16),
+    b = (+rgb[2]).toString(16);
+    /* toString() est utilisé pour convertir un nombre en chaîne de caractères et toString(16) afin de convertir en hexadécimal. */
+
+    if (r.length == 1) {
+        r = "0" + r;
+    }
+    if (g.length == 1) {
+        g = "0" + g;
+    }
+    if (b.length ==1) {
+        b = "0" + b;
+    }
+    return "#" + r + g + b;
+    }
