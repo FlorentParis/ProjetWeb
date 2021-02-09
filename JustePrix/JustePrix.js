@@ -55,12 +55,12 @@ function confirmer(e){
         nb = parseInt(nb);
         tourJoueur ++;
         if(nb < alea){
-            document.getElementById("information").innerHTML="Votre nombre est trop petit";
+            document.getElementById("information").innerHTML="Votre nombre est trop petit.";
         }else if (nb > alea){
-            document.getElementById("information").innerHTML="Votre nombre est trop grand";
+            document.getElementById("information").innerHTML="Votre nombre est trop grand.";
         }else{
             afficheDiv("TourJoueur", "tourSuivant");
-            document.getElementById("message").innerHTML="Félicitation, vous avez reussi à trouver le nombre en "+tourJoueur+" tours.<br>";
+            document.getElementById("message").innerHTML="Félicitation ! Vous avez réussi à trouver le nombre mystère de l'ordinateur en "+tourJoueur+" tours.<br>";
         }
     }
 }
@@ -69,7 +69,7 @@ function confirmer(e){
 function nextTour(){
     document.getElementById("tourSuivant").style.display="none";
     afficheDiv("TourJoueur", "TourOrdinateur");
-    document.getElementById("aleaOrdi").innerHTML="L'ordinateur a trouvé "+ aleaOrdi;
+    document.getElementById("aleaOrdi").innerHTML="L'ordinateur vous propose "+ aleaOrdi+".";
 }
 
 //Deuxieme tour, tour de l'ordinateur de trouver le juste "nombre"
@@ -77,7 +77,7 @@ function getTourOrdi(e) {
     const valeur = e.target.value;
     document.getElementById("tourSuivant").style.display = "none";
     if(max === min || max < min){
-        document.getElementById("aleaOrdi").innerHTML="Le nombre final de l'ordinateur est :"+ aleaOrdi + "<br> Si ce n'est pas le bn nombre, veuillez recommencer le tour";
+        document.getElementById("aleaOrdi").innerHTML="La proposition finale de l'ordinateur est : "+ aleaOrdi +"." + "<br> Si ce n'est pas le bon nombre, veuillez recommencer le tour.";
         btnGrand.style.display="none";
         btnPetit.style.display="none";
     }else{
@@ -89,11 +89,11 @@ function getTourOrdi(e) {
         if(valeur === "grand"){
             min = aleaOrdi+1;
             aleaOrdi = Math.floor(Math.random()* (max - min)+min);
-            document.getElementById("aleaOrdi").innerHTML="L'ordinateur a trouvé "+ aleaOrdi;
+            document.getElementById("aleaOrdi").innerHTML="L'ordinateur vous propose "+ aleaOrdi+".";
         }else{
             max = aleaOrdi;
             aleaOrdi = Math.floor(Math.random()* (max - min)+min);
-            document.getElementById("aleaOrdi").innerHTML="L'ordinateur a trouvé "+ aleaOrdi;
+            document.getElementById("aleaOrdi").innerHTML="L'ordinateur vous propose "+ aleaOrdi+".";
         }
     }
 
@@ -106,7 +106,7 @@ function refresh(){
     min = 1;
     max = 100;
     aleaOrdi = getRandom();
-    document.getElementById("aleaOrdi").innerHTML="Vous avez recommencé le tour : L'ordinateur a trouvé "+ aleaOrdi;
+    document.getElementById("aleaOrdi").innerHTML="Vous avez recommencé le tour : L'ordinateur vous propose "+ aleaOrdi+".";
     btnGrand.style.display="block";
     btnPetit.style.display="block";
 }
@@ -115,15 +115,15 @@ function refresh(){
 function final(){
     if(tourOrdi > tourJoueur){
         afficheDiv("TourOrdinateur", "fin");
-        document.getElementById("resultat").innerHTML="Vous avez Gagné!";
+        document.getElementById("resultat").innerHTML="Vous avez Gagné !";
         document.querySelector("span.score").innerHTML= tourJoueur+" vs "+tourOrdi;
     }else if (tourOrdi < tourJoueur){
         afficheDiv("TourOrdinateur", "fin");
-        document.getElementById("resultat").innerHTML="Vous avez perdu!";
+        document.getElementById("resultat").innerHTML="Vous avez Perdu !";
         document.querySelector("span.score").innerHTML= tourJoueur+" vs "+tourOrdi;
     }else{
         afficheDiv("TourOrdinateur", "fin");
-        document.getElementById("resultat").innerHTML="Égalité!";
+        document.getElementById("resultat").innerHTML="Égalité !";
         document.querySelector("span.score").innerHTML= tourJoueur+" vs "+tourOrdi;
     }
 }
