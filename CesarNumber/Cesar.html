@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="cesarStyle.css">
     <script src="cesarScript.js" defer></script>
+    <link rel="stylesheet" href="../styleGlobal/styleGlobal.css">
+    <script src="../styleGlobal/styleGlobal.js" defer></script>
     <title>Chiffre de Cesar.</title>
 </head>
 <body>
@@ -19,9 +20,21 @@
         </section>
         <section id="reponse">
             <div id="result">
-    
             </div>
     </div>
     </section>
+
+    <div class="infoContent">
+        <button id="info">
+            <img src="../styleGlobal/src/info.svg" alt="">
+        </button>
+        <div id="notice" class="notice">
+            <h2 id="titleNotice">Comment jouer :</h2>
+            <button id="closeNotice" ><a href="">✖</a></button>
+            <p>Le but du jeu est d'aligner une suite de 4 pions de même couleur sur une grille comptant 6 rangées et 7 colonnes. Chaque joueur dispose de 21 pions d'une couleur (par convention, en général jaune ou rouge). Tour à tour, les deux joueurs placent un pion dans la colonne de leur choix, le pion coulisse alors jusqu'à la position la plus basse possible dans la dite colonne à la suite de quoi c'est à l'adversaire de jouer.</p>
+            <p> Le vainqueur est le joueur qui réalise le premier un alignement (horizontal, vertical ou diagonal) consécutif d'au moins quatre pions de sa couleur. Si, alors que toutes les cases de la grille de jeu sont remplies, aucun des deux joueurs n'a réalisé un tel alignement, la partie est déclarée nulle.</p>
+        </div>
+        <button id="close" ><a href="../AccueilV2/home.html">✖</a></button>
+    </div>
 </body>
 </html>
