@@ -50,14 +50,14 @@ function confirmer(e){
     //console.log(alea);
     let nb = document.getElementById("nombre").value;
     if(nb === ""){
-        document.getElementById("info").innerHTML="Veuillez saisir un nombre";
+        document.getElementById("information").innerHTML="Veuillez saisir un nombre";
     }else{
         nb = parseInt(nb);
         tourJoueur ++;
         if(nb < alea){
-            document.getElementById("info").innerHTML="Votre nombre est trop petit";
+            document.getElementById("information").innerHTML="Votre nombre est trop petit";
         }else if (nb > alea){
-            document.getElementById("info").innerHTML="Votre nombre est trop grand";
+            document.getElementById("information").innerHTML="Votre nombre est trop grand";
         }else{
             afficheDiv("TourJoueur", "tourSuivant");
             document.getElementById("message").innerHTML="Félicitation, vous avez reussi à trouver le nombre en "+tourJoueur+" tours.<br>";

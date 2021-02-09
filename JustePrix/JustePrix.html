@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <title>JustePrix</title>
     <link rel="stylesheet" href="JustePrix.css">
+    <link rel="stylesheet" href="../styleGlobal/styleGlobal.css">
 </head>
 <body>
 <h1 id="titre">JustePrix</h1>
 <section id="TourJoueur">
     <h2>Premier Tour</h2>
-    <span>Vous devez trouver le nombre mystère donné par l'ordinateur, essayer de faire le moins de tour possible! </span><br>
+    <span>Vous devez trouver le nombre mystère donné par l'ordinateur (entre et 100), essayer de faire le moins de tour possible! </span><br>
     <input type="number" id="nombre" required>
-        <button id="btnConfirmer" value="confirmer">Confirmer</button>
-    <div id="info"></div>
+        <button id="btnConfirmer" class="btnJP" value="confirmer">Confirmer</button>
+    <div id="information"></div>
 </section>
 
 
 <section id="tourSuivant">
     <p id="message"></p>
     <p>Avant de continuer, veuillez a penser a un nombre entre 1 et 100</p>
-    <button id="btnSuivant" value="suivant">Suivant</button>
+    <button id="btnSuivant" class="btnJP" value="suivant">Suivant</button>
 </section>
 
 
@@ -29,19 +30,33 @@
     <p id="aleaOrdi"></p><br>
     Votre nombre est plus:
     <div id="btns">
-        <button id="btnGrand" value="grand">Grand</button>
-        <button id="btnPetit" value="petit">Petit</button><br>
-        <button id="btnTrouve" value="trouvé">Trouvé</button>
-        <button id="btnRefresh">Recommencer</button>
+        <button id="btnGrand" class="btnJP" value="grand">Grand</button>
+        <button id="btnPetit" class="btnJP" value="petit">Petit</button><br>
+        <button id="btnTrouve" class="btnJP" value="trouvé">Trouvé</button>
+        <button id="btnRefresh" class="btnJP">Recommencer</button>
     </div>
 </section>
 
 <section id="fin">
     <p id="resultat"> </p><br>
     Voici le score final (tour joueur vs tour ordinateur): <span class="score"> </span>
-    <button id="btnRecommencer">Recommencer</button>
+    <button id="btnRecommencer" class="btnJP">Rejouer</button>
 </section>
 
+<div class="infoContent">
+    <button id="info">
+        <img src="../styleGlobal/src/info.svg" alt="">
+    </button>
+    <div id="notice" class="notice">
+        <h2 id="titleNotice">Comment jouer :</h2>
+        <button id="closeNotice" ><a href="">✖</a></button>
+        <p>Bienvenue au Juste Prix : </p>
+        <p>Le but du jeu est de trouver le juste prix en proposant le moins de nombre possible</p>
+        <p> Le vainqueur est le joueur qui réalise le premier un alignement (horizontal, vertical ou diagonal) consécutif d'au moins quatre pions de sa couleur. Si, alors que toutes les cases de la grille de jeu sont remplies, aucun des deux joueurs n'a réalisé un tel alignement, la partie est déclarée nulle.</p>
+    </div>
+    <button id="close" ><a href="../AccueilV2/home.html">✖</a></button>
+</div>
+<script src="../styleGlobal/styleGlobal.js" defer></script>
 <script type="text/javascript" src="JustePrix.js"></script>
 </body>
 </html>

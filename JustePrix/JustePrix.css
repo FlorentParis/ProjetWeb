@@ -39,7 +39,7 @@ section{
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-button {
+.btnJP {
     color:inherit;
     font-family:inherit;
     font-size: inherit;
@@ -51,16 +51,16 @@ button {
     transition: all 0.2s;
 }
 
-button:last-child {
+.btnJP:last-child {
     margin: 0;
 }
 
-button:hover {
+.btnJP:hover {
     box-shadow: 0.4rem 0.4rem 0 black;
     transform: translate(-0.4rem, -0.4rem);
 }
 
-button:active{
+.btnJP:active{
     box-shadow: 0 0 0 black;
     transform: translate(0, 0);
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Pixel Drawer</title>
     <link rel="stylesheet" href="PixelDrawing.css">
+    <link rel="stylesheet" href="../styleGlobal/styleGlobal.css">
 </head>
 <body>
     <h1>Pixel Drawer</h1>
@@ -457,6 +458,20 @@
             </div>
         </div>
     </div>
-<script src="PixelDrawing.js"></script>
+    <div class="infoContent">
+        <button id="info">
+            <img src="../styleGlobal/src/info.svg" alt="">
+        </button>
+        <div id="notice" class="notice">
+            <h2 id="titleNotice">Comment jouer :</h2>
+            <button id="closeNotice" ><a href="">✖</a></button>
+            <p>Bienvenue au Juste Prix : </p>
+            <p>Le but du jeu est de trouver le juste prix en proposant le moins de nombre possible</p>
+            <p> Le vainqueur est le joueur qui réalise le premier un alignement (horizontal, vertical ou diagonal) consécutif d'au moins quatre pions de sa couleur. Si, alors que toutes les cases de la grille de jeu sont remplies, aucun des deux joueurs n'a réalisé un tel alignement, la partie est déclarée nulle.</p>
+        </div>
+        <button id="close" ><a href="../AccueilV2/home.html">✖</a></button>
+    </div>
+    <script src="../styleGlobal/styleGlobal.js" defer></script>
+    <script src="PixelDrawing.js"></script>
 </body>
 </html>
