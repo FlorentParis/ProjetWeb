@@ -5,6 +5,9 @@ var ligne0 = [0,0,0,0,0,0,0];
     ligne4 = [0,0,0,0,0,0,0];
     ligne5 = [0,0,0,0,0,0,0];
 var table = [ligne0,ligne1,ligne2,ligne3,ligne4,ligne5];
+/* table est une liste bidimensionnelle qui sera modifié lors du jeu par des 1 et des 2 ( joueur 1 et joueur 2)
+C est cette liste bidimensionnelle qui permet de pouvoir determiner l allignement de 4 pions */
+
 var X = 0 ;
 var Y = 0 ;
 var CaseResultat = 0 ;
@@ -17,6 +20,11 @@ var compteurcolonne6 = 0 ;
 var compteurcolonne7 = 0 ;
 var compteurjoueur = 1 ;
 
+/* Fonction colonne1 a colonne7 : 
+Elle permette d ajouter de la couleurs dans chaque td du tableau qui on chacun un id determiné. 
+En fonction du compteurcolonne leur correspondant, a chaque fois on prendra le td du tableau representant la ligne du dessus ( compteurcolonne1 = 3 => td colonne1 ligne4)
+Ensuite on determine la couleur du joueur1 ou 2 grace au compteurjoueur qui est modifie a chaque fois que le joueur1 et le joueur2 joue pour avoir un tour chacun
+C est aussi dans cette fonction qu on va modifier table par des 1 et des 2. */
 
 function colonne1 () {
     if (compteurcolonne1 == 0){
@@ -1013,6 +1021,8 @@ function colonne7 () {
     }
 }
 
+/* Les fonctions win+direction permettent de verifier a chaque tour si le joueur a bien aligné 4 pions ou pas , tout est stocké dans une seule fonction la fonction Win
+On utilise a chaque fois le X et Y correspondant a la position du dernier pion jouer et on verifie  */
 function WinHorizonDroite (CaseResultat, X, Y) {
     console.log(CaseResultat);
 
@@ -1094,6 +1104,9 @@ function Win (table, X, Y) {
             return true 
         }
 }
+
+/* La fonction restart recharge la page, mais j aurais aimé reinitialiser les cases du tableau, toutes les constantes et table, pour recommencer sans devoir recharger la page. 
+Malheureusement j ai un bug mais je n arrive pas a regler cela */
 function Restart(Refresh){
     if (Refresh == true){
         let rejouer = prompt( "Voulez-vous rejouer ? Y/N")
