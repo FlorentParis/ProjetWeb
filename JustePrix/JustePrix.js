@@ -1,6 +1,5 @@
 var tourJoueur = 0;
 var tourOrdi = 1;
-
 var max = 100;
 var min = 1;
 var echec = []; //Variable pour stocker les propositions de l'ordinateur --> éviter les doublons
@@ -9,9 +8,9 @@ const getRandom = () => Math.floor(Math.random() * (max -min) +min);
 /* function getRandom(){
 return MAth.floor(MAth.random() + (100-1)+1);
 }*/
-var alea = getRandom();
-var aleaOrdi = getRandom();
-
+var alea = getRandom(); // alea premier tour (nombre que le joueur doit trouver)
+var aleaOrdi = getRandom(); // alea deuxieme tour (nombre que l'ordi propose dans le but de trouver le nb du joueur)
+//console.log(tourJoueur);
 const btnConfirmer = document.getElementById("btnConfirmer");
 btnConfirmer.addEventListener("click", confirmer);
 
@@ -29,19 +28,23 @@ btnTrouve.addEventListener("click", final);
 const btnRefresh = document.getElementById("btnRefresh");
 btnRefresh.addEventListener("click", refresh);
 
+const btnRejouer = document.getElementById("btnRecommencer");
+btnRejouer.addEventListener("click", () => document.location.reload());
+
 //fonction qui va cacher et afficher une div
 function afficheDiv(divNone, divBlock){
     document.getElementById(divNone).style.display="none";
     document.getElementById(divBlock).style.display="block";
 }
 
+//Premier tour : vérifie si le joueur a deviné le nombre aléatoire de l'ordinateur
 function confirmer(e){
     e.preventDefault();
+    //console.log(alea);
     let nb = document.getElementById("nombre").value;
-    if(nb===""){
+    if(nb === ""){
         document.getElementById("info").innerHTML="Veuillez saisir un nombre";
     }else{
-        console.log(alea)
         nb = parseInt(nb);
         tourJoueur ++;
         if(nb < alea){
@@ -49,26 +52,26 @@ function confirmer(e){
         }else if (nb > alea){
             document.getElementById("info").innerHTML="Votre nombre est trop grand";
         }else{
-            afficheDiv("btnConfirmer", "tourSuivant");
-            document.getElementById("message").innerHTML="Félicitation, vous avez reussi à trouver le nombre en"+tourJoueur+" tours.<br>";
+            afficheDiv("TourJoueur", "tourSuivant");
+            document.getElementById("message").innerHTML="Félicitation, vous avez reussi à trouver le nombre en "+tourJoueur+" tours.<br>";
         }
     }
-    // TODO Verife si input n'est pas vide
-
 }
-
+//Affiche le nombre de tour Joueur réalisé ainsi qu'un bouton suivant pour passer au tour suivant
 function nextTour(){
     document.getElementById("tourSuivant").style.display="none";
     afficheDiv("TourJoueur", "TourOrdinateur");
     document.getElementById("aleaOrdi").innerHTML="L'ordinateur a trouvé "+ aleaOrdi;
 }
 
+//Deuxieme tour, tour de l'ordinateur de trouver le juste "nombre"
 function getTourOrdi(e) {
     const valeur = e.target.value;
     document.getElementById("tourSuivant").style.display = "none";
-    //console.log(aleaOrdi);
     if(max === min || max < min){
-        alert("error");
+        document.getElementById("aleaOrdi").innerHTML="Le nombre final de l'ordinateur est :"+ aleaOrdi + "<br> Si ce n'est pas le bn nombre, veuillez recommencer le tour";
+        btnGrand.style.display="none";
+        btnPetit.style.display="none";
     }else{
         while(echec.includes(aleaOrdi)){
             aleaOrdi = Math.floor(Math.random()* (max - min)+min);
@@ -84,30 +87,37 @@ function getTourOrdi(e) {
             aleaOrdi = Math.floor(Math.random()* (max - min)+min);
             document.getElementById("aleaOrdi").innerHTML="L'ordinateur a trouvé "+ aleaOrdi;
         }
-        //Todo btn_reset
-        console.log(echec);
-        console.log("min : " + min + " max : "+ max)
+        /*console.log(echec);
+        console.log("min : " + min + " max : "+ max)*/
     }
 
 }
 
+// réinitialise toute les variables qui concerne le deuxieme tour, et re-affiche le btn grand/petit
 function refresh(){
-    tourOrdi = 0;
+    tourOrdi = 1;
     echec = [];
     min = 1;
     max = 100;
     aleaOrdi = getRandom();
-    document.getElementById("aleaOrdi").innerHTML="Vous avez ReFresh : L'ordinateur a trouvé "+ aleaOrdi;
+    document.getElementById("aleaOrdi").innerHTML="Vous avez recommencé le tour : L'ordinateur a trouvé "+ aleaOrdi;
+    btnGrand.style.display="block";
+    btnPetit.style.display="block";
 }
 
+//affiche si le joueur a gagné ou non
 function final(){
     if(tourOrdi > tourJoueur){
-        afficheDiv("TourOrdinateur", "gagne");
-
+        afficheDiv("TourOrdinateur", "fin");
+        document.getElementById("resultat").innerHTML="Vous avez Gagné!";
+        document.querySelector("span.score").innerHTML= tourJoueur+" vs "+tourOrdi;
     }else if (tourOrdi < tourJoueur){
-        afficheDiv("TourOrdinateur", "perdu");
-
+        afficheDiv("TourOrdinateur", "fin");
+        document.getElementById("resultat").innerHTML="Vous avez perdu!";
+        document.querySelector("span.score").innerHTML= tourJoueur+" vs "+tourOrdi;
     }else{
-        afficheDiv("TourOrdinateur", "egalite");
+        afficheDiv("TourOrdinateur", "fin");
+        document.getElementById("resultat").innerHTML="Égalité!";
+        document.querySelector("span.score").innerHTML= tourJoueur+" vs "+tourOrdi;
     }
 }

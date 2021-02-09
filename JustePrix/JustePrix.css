@@ -1,31 +1,26 @@
 body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw; /*yeaaaaaaaaaaaaaaaaaaaaaa*/
     color:black;
     font-family: "Questrial", sans-serif;
-    background-color: rebeccapurple;
-    background-image: linear-gradient(
-            45deg,
-            lightslategray 25%,
-            transparent 25%,
-            transparent 75%,
-            lightslategray 75%,
-            lightslategray
-    ),
-    linear-gradient(
-            -45deg,
-            lightslategray 25%,
-            transparent 25%,
-            transparent 75%,
-            lightslategray 75%,
-            lightslategray
-    );
-    background-size: 60px 60px;
+    background: radial-gradient(#554562, #102246);
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+#titre{
+    color:white;
+}
+/* Display none par défaut */
+#TourOrdinateur,#tourSuivant, #fin, #gagne, #perdu, #egalite{
+    display: none;
 }
 
-#TourJoueur, #TourOrdinateur{
-    width: 70%;
-    align-items: center;
+section{
+    width:auto;
+    height: auto;
     padding: 1.6rem 3rem;
     border: 3px solid black;
     border-radius: 5px;
@@ -54,23 +49,12 @@ button:hover {
     transform: translate(-0.4rem, -0.4rem);
 }
 
-button:active {
-    box-shadow: 0 0 0 black;
-    transform: translate(0, 0);
+button:active{
+    box-shadow: 0 5px #ffffff;
+    transform: translateY(2px);
 }
 
-#tourSuivant {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.6rem 3rem;
-    border: 3px solid black;
-    border-radius: 5px;
-    background: white;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+#btns{
+  display: flex;
+  align-content: space-between;
 }
