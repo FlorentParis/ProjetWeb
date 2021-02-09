@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 body{
-    background: radial-gradient(#a044ff, #6a3093);
+    background: radial-gradient(#554562, #102246);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -14,15 +14,44 @@ body{
     justify-content: center;
     align-items: center;
 }
+#choix{
+    position: relative;
+    width: 100vw;
+}
+.fond{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #choix > button{
     margin: 0 30px;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border-radius: 100%;
-    border: 5px solid white;
-    background-color: rebeccapurple;
+    background-color: white;
     color: white;
     font-size: 30px;
+    box-shadow: inset 0em 0.3em #ccccccA0;
+    position: relative;
+}
+#choix > button > img{
+    height: 75px;
+    width: 75px;
+}
+#choix > button#pierre{
+    border: 20px solid red;
+    left: 75px;
+    bottom: 125px;
+}
+#choix > button#feuille{
+    border: 20px solid blue;
+    right: 75px;
+    bottom: 125px;
+}
+#choix > button#ciseaux{
+    border: 20px solid orange;
+    bottom: -100px;
 }
 #score .containerJoueur, #score .containerOrdi{
     border: 1px solid white;

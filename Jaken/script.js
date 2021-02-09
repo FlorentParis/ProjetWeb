@@ -25,7 +25,7 @@ function game(choicePlayer) {
         setTimeout(() => {
             document.getElementById("popegal").style.display = "none";
         }, 2000);
-    }else if(choicePlayer === "scissors" && choiceOrdi[random] === "paper"){        // P = S / O = P
+    }else if(choicePlayer === "scissors" && choiceOrdi[random] === "paper"){
         console.log("Le joueur gagne !");
         sommeJoueur += 1;
         document.getElementById("resultJoueur").innerHTML=sommeJoueur;
