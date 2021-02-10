@@ -1023,60 +1023,69 @@ function colonne7 () {
 
 /* Les fonctions win+direction permettent de verifier a chaque tour si le joueur a bien aligné 4 pions ou pas , tout est stocké dans une seule fonction la fonction Win
 On utilise a chaque fois le X et Y correspondant a la position du dernier pion jouer et on verifie  */
-function WinHorizonDroite (CaseResultat, X, Y) {
-    console.log(CaseResultat);
-
+function WinHorizontal (CaseResultat, X, Y) {   
     if (Y+3 < 7){
         if (CaseResultat == table[X][Y+1] && CaseResultat == table[X][Y+2] && CaseResultat == table[X][Y+3]){
                 return true
         }   
     }
-}
-function WinHorizonGauche (CaseResultat, X, Y) {
+    if (Y+2 < 7 && Y-1 > -1){
+        if (CaseResultat == table[X][Y-1] && CaseResultat == table[X][Y+1] && CaseResultat == table[X][Y+2]){
+                return true
+        }   
+    }
+    if (Y+1 < 7 && Y-2 > -1){
+        if (CaseResultat == table[X][Y-2] && CaseResultat == table[X][Y-1] && CaseResultat == table[X][Y+1]){
+                return true
+        }   
+    }
     if (Y-3 > -1){
         if (CaseResultat == table[X][Y-1] && CaseResultat == table[X][Y-2] && CaseResultat == table[X][Y-3]){
             return true
         }   
     }
 }
-function WinVerticaleHaut (CaseResultat, X, Y) {
+
+function WinVerticale (CaseResultat, X, Y) {
     if (X-3 > -1){
         if (CaseResultat == table[X-1][Y] && CaseResultat == table[X-2][Y] && CaseResultat == table[X-3][Y]){
             return true
         }   
     }
-}
-function WinVerticaleBas (CaseResultat, X, Y) {
+    if (X-2 > -1 && X+1 < 6){
+        if (CaseResultat == table[X-2][Y] && CaseResultat == table[X-1][Y] && CaseResultat == table[X+1][Y]){
+            return true
+        }   
+    }
+    if (X-1 > -1 && X+2 < 6){
+        if (CaseResultat == table[X-1][Y] && CaseResultat == table[X+1][Y] && CaseResultat == table[X+2][Y]){
+            return true
+        }   
+    }
     if (X+3 < 6){
         if (CaseResultat == table[X+1][Y] && CaseResultat == table[X+2][Y] && CaseResultat == table[X+3][Y]){
             return true
         }   
     }
 }
-function WinDiagoHautGauche (CaseResultat, X, Y) {
+
+function WinDiagoHautGaucheBasDroite (CaseResultat, X, Y) {
     if (Y-3 > -1 && X-3>-1 ){
         if (CaseResultat == table[X-1][Y-1] && CaseResultat == table[X-2][Y-2] && CaseResultat == table[X-3][Y-3]){
             return true
         }   
     }
-}
-function WinDiagoHautDroite (CaseResultat, X, Y) {
-    if (Y+3 < 7 && X-3>-1 ){
-        if (CaseResultat == table[X-1][Y+1] && CaseResultat == table[X-2][Y+2] && CaseResultat == table[X-3][Y+3]){
+    if (Y-2 > -1 && Y+1 < 7 && X-2 > -1 && X+1 < 6){
+        if (CaseResultat == table[X+1][Y+1] && CaseResultat == table[X-1][Y-1] && CaseResultat == table[X-2][Y-2]){
             return true
         }   
     }
-}
-function WinDiagoBasGauche (CaseResultat, X, Y) {
-    if (Y-3 > -1 && X+3< 6 ){
-        if (CaseResultat == table[X+1][Y-1] && CaseResultat == table[X+2][Y-2] && CaseResultat == table[X+3][Y-3]){
+    if (Y-1 > -1 && Y+2 < 7 && X-1 > -1 && X+2 < 6){
+        if (CaseResultat == table[X+1][Y+1] && CaseResultat == table[X+2][Y+2] && CaseResultat == table[X-1][Y-1]){
             return true
         }   
     }
-}
-
-function WinDiagoBasDroite (CaseResultat, X, Y) {
-    if (Y+3 > -1 && X+3< 6 ){
+    if (Y+3 < 7 && X+3 < 6 ){
         if (CaseResultat == table[X+1][Y+1] && CaseResultat == table[X+2][Y+2] && CaseResultat == table[X+3][Y+3]){
             if (CaseResultat == 1) {
                 return true
@@ -1085,17 +1094,38 @@ function WinDiagoBasDroite (CaseResultat, X, Y) {
     }
 }
 
+
+function WinDiagoBasGaucheHautDroite (CaseResultat, X, Y) {
+    if (Y+3 < 7 && X-3 > -1 ){
+        if (CaseResultat == table[X-1][Y+1] && CaseResultat == table[X-2][Y+2] && CaseResultat == table[X-3][Y+3]){
+            return true
+        }   
+    }
+    if (Y+2 < 7 && Y-1 > -1 && X-2 > -1 && X+1 < 6 ){
+        if (CaseResultat == table[X+1][Y-1] && CaseResultat == table[X-1][Y+1] && CaseResultat == table[X-2][Y+2]){
+            return true
+        }   
+    }
+    if (Y+1 < 7 && Y-2 > -1 && X-1 > -1 && X+2 < 6){
+        if (CaseResultat == table[X+1][Y-1] && CaseResultat == table[X+2][Y-2] && CaseResultat == table[X-1][Y+1]){
+            return true
+        }   
+    }
+    if (Y-3 > -1 && X+3< 6 ){
+        if (CaseResultat == table[X+1][Y-1] && CaseResultat == table[X+2][Y-2] && CaseResultat == table[X+3][Y-3]){
+            return true
+        }   
+    }
+}
+
+
 function Win (table, X, Y) {
     var CaseResultat = table[X][Y]
-    var a = WinHorizonDroite (CaseResultat, X, Y)
-        b = WinHorizonGauche (CaseResultat, X, Y)
-        c = WinVerticaleHaut (CaseResultat, X, Y)
-        d = WinVerticaleBas (CaseResultat, X, Y)
-        e = WinDiagoHautGauche (CaseResultat, X, Y)
-        f = WinDiagoHautDroite (CaseResultat, X, Y)
-        g = WinDiagoBasGauche (CaseResultat, X, Y)
-        h = WinDiagoBasDroite (CaseResultat, X, Y)
-        if (a == true || b == true || c == true || d == true || e == true || f == true || g == true || h == true ) {
+    var a = WinHorizontal (CaseResultat, X, Y)
+        b = WinVerticale(CaseResultat, X, Y)
+        c = WinDiagoHautGaucheBasDroite (CaseResultat, X, Y)
+        d = WinDiagoBasGaucheHautDroite (CaseResultat, X, Y)
+        if (a == true || b == true || c == true || d == true) {
             if (CaseResultat == 1) {
                 alert("Le Joueur 1 a gagné") ;
             } else{
