@@ -1127,9 +1127,13 @@ function Win (table, X, Y) {
         d = WinDiagoBasGaucheHautDroite (CaseResultat, X, Y)
         if (a == true || b == true || c == true || d == true) {
             if (CaseResultat == 1) {
-                alert("Le Joueur 1 a gagné") ;
+                setTimeout(function() {
+                    alert("Le joueur 1 a gagné");
+                  }, 10);
             } else{
-                alert("Le Joueur 2 a gagné") ;
+                setTimeout(function() {
+                    alert("Le joueur 2 a gagné");
+                  }, 10);
             }
             return true 
         }
@@ -1139,7 +1143,9 @@ function Win (table, X, Y) {
 Malheureusement j ai un bug mais je n arrive pas a regler cela */
 function Restart(Refresh){
     if (Refresh == true){
-        let rejouer = prompt( "Voulez-vous rejouer ? Y/N")
+        setTimeout(function() {
+            let rejouer = prompt( "Voulez-vous rejouer ? Y/N")
+          }, 20);
         if (rejouer == "Y"){
             window.location.reload();
         /* let rejouer = prompt( "Voulez-vous rejouer ? Y/N")
