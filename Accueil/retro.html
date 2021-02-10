@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="retro.css">
+    <script src="retro.js" defer></script>
     <title>Retro</title>
 </head>
 <body>
-<section class="loader">
+<section id="loader">
     <img src="images/NameHeticWhite.svg" alt="">
-    <div class="bar">20%</div>
+    <div id="bar"></div>
 </section>
 <main class="grille">
     <section class="titre">
@@ -19,9 +20,9 @@
     <section class="jeux">
         <div class="repertoir">
             <ul>
-                <li>Juste Prix</li>
-                <li>Pixel Drawer</li>
-                <li>Puissance 4</li>
+                <li><a href="#" id="link1" onclick="ajout('justeprix')">Juste Prix</a></li>
+                <li><a href="#" id="link2" onclick="ajout('puissance4')">Puissance 4</a></li>
+                <li>Snake</li>
                 <li>Black Jack</li>
                 <li>Snake</li>
                 <li>Pierre feuille Ciseaux</li>
