@@ -26,9 +26,9 @@ demo();
 
 function ajout(game) {
   if(game == "justeprix"){
-    document.getElementById("link1").href="../JustePrix/justePrix.html";
+    document.getElementById("link1").href="JustePrix/justePrix.html";
   }else if(game == "puissance4"){
-    document.getElementById("link2").href="../Puissance4/firstPuissance4.html";
+    document.getElementById("link2").href="Puissance4/firstPuissance4.html";
   }else{
     alert("bug");
   }
