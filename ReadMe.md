@@ -21,11 +21,13 @@ que des divertissements codés en langage web front (HTML/CSS/JS).
 
 Pour plus d'information, [cliquez-ici](Projet_Web_-_Plateforme_de_divertissements.pdf)
 
-#La répartition des tâches :
+# La répartition des tâches :
+
+
 Divertissement : développeur principal (aide)
 
 
-A savoir, nous avons la plupart du temps fait du paire-programming
+A savoir, nous avons la plupart du temps fait du pair-programming
 * Conception du style et mise en place de la page d'accueil : Steve
 * Juste Prix : Giselle
 * ClickCounter : Benjamin (Florent)
