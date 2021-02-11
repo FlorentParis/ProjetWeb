@@ -35,12 +35,12 @@ body {
     grid-template-rows: 20% 60% 20%;
     height: 100vh;
 }
-.titre {
-    font-size: 1rem;
+#titre {
+    font-size: 30px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
     text-align: center;
+    margin-top: 25px;
 }
 
 .jeux {
@@ -50,9 +50,11 @@ body {
 .repertoir {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    margin-right: 5vw;
     flex-direction: column;
     text-align: center;
+    font-size: 24px;
 }
 .jeux > .repertoir li {
     margin: 1rem;
@@ -63,30 +65,37 @@ a{
     text-decoration: none;
     color: white;
 }
-/* @media (max-width: 250px)*/ 
-    .cassette {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .cassette > img {
-        height: 300px;
-        width: 400px;
-    }
-    .jeux > .cassette > span {
-        margin-top: 3vh;
-    }
-
-    .cta {
-        font-size: 2.25rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+a:hover{
+    color: yellow;
+}
+.cassette {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5vw;
+    flex-direction: column;
+}
+.cassette > img {
+    height: 300px;
+}
+.nbplayer{
+    font-size: 26px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.nbplayer > span{
+    margin-top: 2px;
+}
 .block {
-    width: 80px;
-    height: 15px;
+    width: 68px;
+    height: 26px;
     background-color: #FFFFFF;
-    margin: 2rem;
+    margin: 0 20px;
+}
+.cta {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

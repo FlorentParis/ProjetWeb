@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="retro.css">
     <script src="retro.js" defer></script>
     <title>Retro</title>
@@ -12,32 +13,32 @@
     <div id="bar"></div>
 </section>
 <main class="grille">
-    <section class="titre">
-        <h1>
-            Les Héticiens vous présentent</br>la plateforme de divertissement
-        </h1>
+    <section id="titre">
+        <h1>Les Héticiens vous présentent<br>la plateforme de divertissement</h1>
     </section>
     <section class="jeux">
         <div class="repertoir">
             <ul>
-                <li><a href="#" id="link1" onclick="ajout('justeprix')">Juste Prix</a></li>
-                <li><a href="#" id="link2" onclick="ajout('puissance4')">Puissance 4</a></li>
-                <li>Snake</li>
-                <li>Black Jack</li>
-                <li>Snake</li>
-                <li>Pierre feuille Ciseaux</li>
-                <li>Mastermind</li>
+                <li><a id="l1" class="L" href="#" onclick="ajout('justeprix')">Juste Prix</a></li>
+                <li><a id="l2" href="#" onclick="ajout('tallyClickCounter')">Tally Click Counter</a></li>
+                <li><a id="l3" href="#" onclick="ajout('chiffreCesar')">Chiffre de Cesar</a></li>
+                <li><a id="l4" href="#" onclick="ajout('pixelDrawer')">PixelDrawer</a></li>
+                <li><a id="l5" href="#" onclick="ajout('janken')">Janken</a></li>
+                <li><a id="l6" href="#" onclick="ajout('puissance4')">Puissance 4</a></li>
+                <li><a id="l7" href="#" onclick="ajout('snake')">Snake</a></li>
             </ul>
         </div>
         <div class="cassette">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1JiRklEaDuMUAhhfM9wYkXgwno9D4bhR0Qg&usqp=CAU" alt="puissance4">
-            <span>Player x1</span>
+            <img id="cassette" src="images/JustePrix.svg" alt="puissance4">
+            <div class="nbplayer">
+                <div class="block"></div>
+                <span>Player x1</span>
+                <div class="block"></div>
+            </div>
         </div>
     </section>
     <section class="cta">
-        <div class="block"></div>
-        <span> Start </span>
-        <div class="block"></div>
+        <span><a href="#" id="link">- Start -</a></span>
     </section>
 </main>
 </body>
