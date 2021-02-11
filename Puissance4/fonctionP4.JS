@@ -1141,11 +1141,10 @@ function Win (table, X, Y) {
 
 /* La fonction restart recharge la page, mais j aurais aimé reinitialiser les cases du tableau, toutes les constantes et table, pour recommencer sans devoir recharger la page. 
 Malheureusement j ai un bug mais je n arrive pas a regler cela */
-function Restart(Refresh){
+async function Restart(Refresh){
     if (Refresh == true){
-        setTimeout(function() {
-            let rejouer = prompt( "Voulez-vous rejouer ? Y/N")
-          }, 20);
+        await sleep(20)
+        var rejouer = prompt( "Voulez-vous rejouer ? Y/N")
         if (rejouer == "Y"){
             window.location.reload();
         /* let rejouer = prompt( "Voulez-vous rejouer ? Y/N")
@@ -1168,8 +1167,14 @@ function Restart(Refresh){
             compteurcolonne6 = 0 ; 
             compteurcolonne7 = 0 ;
             compteurjoueur = 1 ; */
-    } else {
-            return false
+        } else if (rejouer == "N" || rejouer == "n"){
+                window.location.href = "../index.html"
+        } else{
+            alert("Entrée invalide, veuillez réessayer...")
+            Restart(Refresh)
         }
-    }
+    } 
 }
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
