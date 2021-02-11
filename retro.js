@@ -66,10 +66,11 @@ function ajout(game) {
     document.getElementById('cassette').src="images/Puissance4.svg";
     l6.classList.add("active");
   }else if(game == "snake"){
-    document.getElementById("link").href="snake/bouton.html";
+    document.getElementById("link").href="snake/index.html";
     document.getElementById('cassette').src="images/Snake.svg";
     l7.classList.add("active");
   }else{
     alert("bug");
   }
 }
+
