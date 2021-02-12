@@ -5,6 +5,8 @@
     <title>Taily Click Counter</title>
     <script src="TailyClickCounter.JS" defer></script>
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="../styleGlobal/styleGlobal.css">
+    <script src="../styleGlobal/styleGlobal.js" defer></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -21,6 +23,19 @@
         <div id="compteur1"></div>
       </div>
       <input type="button" id="Reset" value ="Reset" onclick="Reset()">
+    </div>
+
+    <div class="infoContent">
+      <button id="info">
+          <img src="../styleGlobal/src/info.svg" alt="">
+      </button>
+      <div id="notice" class="notice">
+          <h2 id="titleNotice">Comment jouer :</h2>
+          <button id="closeNotice" ><a href="">✖</a></button>
+          <br>
+          <p>Un compteur, ou compteur-enregistreur selon une recommandation de l'OQLF, est un petit appareil conçu pour tenir dans la main, composé d'un dispositif affichant un nombre entier, et d'une gachette actionnable par l'utilisateur pour incrémenter ce nombre.</p>
+      </div>
+      <button id="close" ><a href="../index.html">✖</a></button>
     </div>
   </body>
 </html>

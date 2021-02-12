@@ -40,35 +40,35 @@ demo();
 
 function ajout(game) {
   //Supprime le style du lien deja actif...
-  L.forEach(lien => lien.classList.remove("active"));
+  L.forEach(lien => lien.classList.remove("orange"));
   if(game == "justeprix"){
     document.getElementById("link").href="JustePrix/justePrix.html";
     document.getElementById('cassette').src="images/JustePrix.svg";
-    l1.classList.add("active");
+    l1.classList.add("orange");
   }else if(game == "tallyClickCounter"){
     document.getElementById("link").href="Taily click counter/TailyClickCounter.html";
     document.getElementById('cassette').src="images/TallyClickCounter.svg";
-    l2.classList.add("active");
+    l2.classList.add("orange");
   }else if(game == "chiffreCesar"){
     document.getElementById("link").href="CesarNumber/Cesar.html";
     document.getElementById('cassette').src="images/numberCesar.svg";
-    l3.classList.add("active");
+    l3.classList.add("orange");
   }else if(game == "pixelDrawer"){
     document.getElementById("link").href="PixelDrawing/PixelDrawing.html";
     document.getElementById('cassette').src="images/pixelDrawer.svg";
-    l4.classList.add("active");
+    l4.classList.add("orange");
   }else if(game == "janken"){
     document.getElementById("link").href="Jaken/jakenOriginal.html";
     document.getElementById('cassette').src="images/Janken.svg";
-    l5.classList.add("active");
+    l5.classList.add("orange");
   }else if(game == "puissance4"){
     document.getElementById("link").href="Puissance4/firstPuissance4.html";
     document.getElementById('cassette').src="images/Puissance4.svg";
-    l6.classList.add("active");
+    l6.classList.add("orange");
   }else if(game == "snake"){
     document.getElementById("link").href="snake/index.html";
     document.getElementById('cassette').src="images/Snake.svg";
-    l7.classList.add("active");
+    l7.classList.add("orange");
   }else{
     alert("bug");
   }
