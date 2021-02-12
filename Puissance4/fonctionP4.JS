@@ -1,5 +1,3 @@
-//TODO : Egalité à faire
-
 var ligne0 = [0,0,0,0,0,0,0];
     ligne1 = [0,0,0,0,0,0,0];
     ligne2 = [0,0,0,0,0,0,0];
@@ -21,7 +19,15 @@ var compteurcolonne5 = 0 ;
 var compteurcolonne6 = 0 ; 
 var compteurcolonne7 = 0 ;
 var compteurjoueur = 1 ;
-
+var Colonne1Rempli = 0 ;
+var Colonne2Rempli = 0 ;
+var Colonne3Rempli = 0 ;
+var Colonne4Rempli = 0 ;
+var Colonne5Rempli = 0 ;
+var Colonne6Rempli = 0 ;
+var Colonne7Rempli = 0 ;
+var egalite = 0
+var Refresh = 0
 /* Fonction colonne1 a colonne7 : 
 Elle permette d ajouter de la couleurs dans chaque td du tableau qui on chacun un id determiné. 
 En fonction du compteurcolonne leur correspondant, a chaque fois on prendra le td du tableau representant la ligne du dessus ( compteurcolonne1 = 3 => td colonne1 ligne4)
@@ -39,7 +45,7 @@ function colonne1 () {
             X = 5
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n10" );
             monElement.classList.add( "joueur2" )
@@ -49,7 +55,7 @@ function colonne1 () {
             X = 5
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne1 == 1){
@@ -62,7 +68,7 @@ function colonne1 () {
             X = 4
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n20" );
             monElement.classList.add( "joueur2" )
@@ -72,7 +78,7 @@ function colonne1 () {
             X = 4
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne1 == 2){
@@ -85,7 +91,7 @@ function colonne1 () {
             X = 3
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n30" );
             monElement.classList.add( "joueur2" )
@@ -95,7 +101,7 @@ function colonne1 () {
             X = 3
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne1 == 3){
@@ -108,7 +114,7 @@ function colonne1 () {
             X = 2
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n40" );
             monElement.classList.add( "joueur2" )
@@ -118,7 +124,7 @@ function colonne1 () {
             X = 2
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne1 == 4){
@@ -131,7 +137,7 @@ function colonne1 () {
             X = 1
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n50" );
             monElement.classList.add( "joueur2" )
@@ -141,7 +147,7 @@ function colonne1 () {
             X = 1
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne1 == 5){
@@ -154,7 +160,14 @@ function colonne1 () {
             X = 0
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne1Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } else {
             let monElement = document.querySelector( "#n60" );
             monElement.classList.add( "joueur2" )
@@ -164,10 +177,18 @@ function colonne1 () {
             X = 0
             Y = 0
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne1Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } 
     } else {
         alert("La colonne 1 est deja pleine")
+        Colonne1Rempli = 1
     }
 }
 function colonne2 () {
@@ -181,7 +202,7 @@ function colonne2 () {
             X = 5
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n11" );
             monElement.classList.add( "joueur2" )
@@ -191,7 +212,7 @@ function colonne2 () {
             X = 5
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne2 == 1){
@@ -204,7 +225,7 @@ function colonne2 () {
             X = 4
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n21" );
             monElement.classList.add( "joueur2" )
@@ -214,7 +235,7 @@ function colonne2 () {
             X = 4
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne2 == 2){
@@ -227,7 +248,7 @@ function colonne2 () {
             X = 3
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n31" );
             monElement.classList.add( "joueur2" )
@@ -237,7 +258,7 @@ function colonne2 () {
             X = 3
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne2 == 3){
@@ -250,7 +271,7 @@ function colonne2 () {
             X = 2
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n41" );
             monElement.classList.add( "joueur2" )
@@ -260,7 +281,7 @@ function colonne2 () {
             X = 2
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne2 == 4){
@@ -273,7 +294,7 @@ function colonne2 () {
             X = 1
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n51" );
             monElement.classList.add( "joueur2" )
@@ -283,7 +304,7 @@ function colonne2 () {
             X = 1
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne2 == 5){
@@ -296,7 +317,14 @@ function colonne2 () {
             X = 0
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne2Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } else {
             let monElement = document.querySelector( "#n61" );
             monElement.classList.add( "joueur2" )
@@ -306,10 +334,18 @@ function colonne2 () {
             X = 0
             Y = 1
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne2Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } 
     } else {
         alert("La colonne 2 est deja pleine")
+        Colonne2Rempli = 1 ;
     }
 }
 function colonne3 () {
@@ -323,7 +359,7 @@ function colonne3 () {
             X = 5
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n12" );
             monElement.classList.add( "joueur2" )
@@ -333,7 +369,7 @@ function colonne3 () {
             X = 5
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne3 == 1){
@@ -346,7 +382,7 @@ function colonne3 () {
             X = 4
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n22" );
             monElement.classList.add( "joueur2" )
@@ -356,7 +392,7 @@ function colonne3 () {
             X = 4
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne3 == 2){
@@ -369,7 +405,7 @@ function colonne3 () {
             X = 3
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n32" );
             monElement.classList.add( "joueur2" )
@@ -379,7 +415,7 @@ function colonne3 () {
             X = 3
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne3 == 3){
@@ -392,7 +428,7 @@ function colonne3 () {
             X = 2
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n42" );
             monElement.classList.add( "joueur2" )
@@ -402,7 +438,7 @@ function colonne3 () {
             X = 2
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne3 == 4){
@@ -415,7 +451,7 @@ function colonne3 () {
             X = 1
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n52" );
             monElement.classList.add( "joueur2" )
@@ -425,7 +461,7 @@ function colonne3 () {
             X = 1
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne3 == 5){
@@ -438,7 +474,14 @@ function colonne3 () {
             X = 0
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne3Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } else {
             let monElement = document.querySelector( "#n62" );
             monElement.classList.add( "joueur2" )
@@ -448,7 +491,14 @@ function colonne3 () {
             X = 0
             Y = 2
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne3Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } 
     } else {
         alert("La colonne 3 est deja pleine")
@@ -465,7 +515,7 @@ function colonne4 () {
             X = 5
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n13" );
             monElement.classList.add( "joueur2" )
@@ -475,7 +525,7 @@ function colonne4 () {
             X = 5
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne4 == 1){
@@ -488,7 +538,7 @@ function colonne4 () {
             X = 4
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n23" );
             monElement.classList.add( "joueur2" )
@@ -498,7 +548,7 @@ function colonne4 () {
             X = 4
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne4 == 2){
@@ -511,7 +561,7 @@ function colonne4 () {
             X = 3
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n33" );
             monElement.classList.add( "joueur2" )
@@ -521,7 +571,7 @@ function colonne4 () {
             X = 3
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne4 == 3){
@@ -534,7 +584,7 @@ function colonne4 () {
             X = 2
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n43" );
             monElement.classList.add( "joueur2" )
@@ -544,7 +594,7 @@ function colonne4 () {
             X = 2
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne4 == 4){
@@ -557,7 +607,7 @@ function colonne4 () {
             X = 1
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n53" );
             monElement.classList.add( "joueur2" )
@@ -567,7 +617,7 @@ function colonne4 () {
             X = 1
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne4 == 5){
@@ -580,7 +630,14 @@ function colonne4 () {
             X = 0
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne4Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } else {
             let monElement = document.querySelector( "#n63" );
             monElement.classList.add( "joueur2" )
@@ -590,7 +647,14 @@ function colonne4 () {
             X = 0
             Y = 3
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne4Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } 
     } else {
         alert("La colonne 4 est deja pleine")
@@ -607,7 +671,7 @@ function colonne5 () {
             X = 5
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n14" );
             monElement.classList.add( "joueur2" )
@@ -617,7 +681,7 @@ function colonne5 () {
             X = 5
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne5 == 1){
@@ -630,7 +694,7 @@ function colonne5 () {
             X = 4
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n24" );
             monElement.classList.add( "joueur2" )
@@ -640,7 +704,7 @@ function colonne5 () {
             X = 4
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne5 == 2){
@@ -653,7 +717,7 @@ function colonne5 () {
             X = 3
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n34" );
             monElement.classList.add( "joueur2" )
@@ -663,7 +727,7 @@ function colonne5 () {
             X = 3
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne5 == 3){
@@ -676,7 +740,7 @@ function colonne5 () {
             X = 2
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n44" );
             monElement.classList.add( "joueur2" )
@@ -686,7 +750,7 @@ function colonne5 () {
             X = 2
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne5 == 4){
@@ -699,7 +763,7 @@ function colonne5 () {
             X = 1
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n54" );
             monElement.classList.add( "joueur2" )
@@ -709,7 +773,7 @@ function colonne5 () {
             X = 1
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne5 == 5){
@@ -722,7 +786,14 @@ function colonne5 () {
             X = 0
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne5Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } else {
             let monElement = document.querySelector( "#n64" );
             monElement.classList.add( "joueur2" )
@@ -732,7 +803,14 @@ function colonne5 () {
             X = 0
             Y = 4
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne5Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } 
     } else {
         alert("La colonne 5 est deja pleine")
@@ -749,7 +827,7 @@ function colonne6 () {
             X = 5
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n15" );
             monElement.classList.add( "joueur2" )
@@ -759,7 +837,7 @@ function colonne6 () {
             X = 5
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne6 == 1){
@@ -772,7 +850,7 @@ function colonne6 () {
             X = 4
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n25" );
             monElement.classList.add( "joueur2" )
@@ -782,7 +860,7 @@ function colonne6 () {
             X = 4
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne6 == 2){
@@ -795,7 +873,7 @@ function colonne6 () {
             X = 3
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n35" );
             monElement.classList.add( "joueur2" )
@@ -805,7 +883,7 @@ function colonne6 () {
             X = 3
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne6 == 3){
@@ -818,7 +896,7 @@ function colonne6 () {
             X = 2
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n45" );
             monElement.classList.add( "joueur2" )
@@ -828,7 +906,7 @@ function colonne6 () {
             X = 2
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne6 == 4){
@@ -841,7 +919,7 @@ function colonne6 () {
             X = 1
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         } else {
             let monElement = document.querySelector( "#n55" );
             monElement.classList.add( "joueur2" )
@@ -851,7 +929,7 @@ function colonne6 () {
             X = 1
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     }
     else if (compteurcolonne6 == 5){
@@ -864,7 +942,14 @@ function colonne6 () {
             X = 0
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne6Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } else {
             let monElement = document.querySelector( "#n65" );
             monElement.classList.add( "joueur2" )
@@ -874,10 +959,18 @@ function colonne6 () {
             X = 0
             Y = 5
             Refresh = Win (table, X, Y)
-            Restart(Refresh)
+            Restart(Refresh, egalite)
+            Colonne6Rempli = 1 ;
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } 
     } else {
         alert("La colonne 6 est deja pleine")
+        
     }
 }
 function colonne7 () {
@@ -891,7 +984,7 @@ function colonne7 () {
             X = 5
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         } else {
             let monElement = document.querySelector( "#n16" );
             monElement.classList.add( "joueur2" )
@@ -901,7 +994,7 @@ function colonne7 () {
             X = 5
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         }
     }
     else if (compteurcolonne7 == 1){
@@ -914,7 +1007,7 @@ function colonne7 () {
             X = 4
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         } else {
             let monElement = document.querySelector( "#n26" );
             monElement.classList.add( "joueur2" )
@@ -924,7 +1017,7 @@ function colonne7 () {
             X = 4
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         }
     }
     else if (compteurcolonne7 == 2){
@@ -937,7 +1030,7 @@ function colonne7 () {
             X = 3
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         } else {
             let monElement = document.querySelector( "#n36" );
             monElement.classList.add( "joueur2" )
@@ -947,7 +1040,7 @@ function colonne7 () {
             X = 3
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         }
     }
     else if (compteurcolonne7 == 3){
@@ -960,7 +1053,7 @@ function colonne7 () {
             X = 2
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         } else {
             let monElement = document.querySelector( "#n46" );
             monElement.classList.add( "joueur2" )
@@ -970,7 +1063,7 @@ function colonne7 () {
             X = 2
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         }
     }
     else if (compteurcolonne7 == 4){
@@ -983,7 +1076,7 @@ function colonne7 () {
             X = 1
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         } else {
             let monElement = document.querySelector( "#n56" );
             monElement.classList.add( "joueur2" )
@@ -993,7 +1086,7 @@ function colonne7 () {
             X = 1
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
         }
     }
     else if (compteurcolonne7 == 5){
@@ -1006,7 +1099,14 @@ function colonne7 () {
             X = 0
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
+            Colonne7Rempli = 1
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } else {
             let monElement = document.querySelector( "#n66" );
             monElement.classList.add( "joueur2" )
@@ -1016,10 +1116,18 @@ function colonne7 () {
             X = 0
             Y = 6
             Refresh = Win (table, X, Y)
-            Restart(Refresh);
+            Restart(Refresh, egalite);
+            Colonne7Rempli = 1
+            if (Refresh == false){
+                setTimeout(function(){
+                egalite = Verifegalité()
+                Restart(Refresh, egalite)
+                }, 100)
+            }
         } 
     } else {
         alert("La colonne 7 est deja pleine")
+        
     }
 }
 
@@ -1138,16 +1246,18 @@ function Win (table, X, Y) {
                   }, 10);
             }
             return true 
+        } else {
+            return false
         }
 }
 
 /* La fonction restart recharge la page, mais j aurais aimé reinitialiser les cases du tableau, toutes les constantes et table, pour recommencer sans devoir recharger la page. 
 Malheureusement j ai un bug mais je n arrive pas a regler cela */
-async function Restart(Refresh){
-    if (Refresh == true){
+async function Restart(Refresh, egalite){
+    if (Refresh == true || egalite == true){
         await sleep(20)
         var rejouer = prompt( "Voulez-vous rejouer ? Y/N")
-        if (rejouer == "Y"){
+        if (rejouer == "Y" || rejouer == "y"){
             window.location.reload();
         /* let rejouer = prompt( "Voulez-vous rejouer ? Y/N")
         if (rejouer == "Y"){
@@ -1173,10 +1283,16 @@ async function Restart(Refresh){
                 window.location.href = "../index.html"
         } else{
             alert("Entrée invalide, veuillez réessayer...")
-            Restart(Refresh)
+            Restart(Refresh, egalite)
         }
     } 
 }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+function Verifegalité() {
+    if (Colonne1Rempli == 1 && Colonne2Rempli == 1 && Colonne3Rempli == 1 && Colonne4Rempli == 1 && Colonne5Rempli == 1 && Colonne6Rempli == 1 && Colonne7Rempli == 1){
+        alert("Waw, Egalité ! Tant de temps perdu pour rien ! ;-)")
+        return true
+    }
+} 
