@@ -13,23 +13,27 @@ body {
     justify-content: center;
     flex-direction: column;
 }
-#titre{
+#titre {
     height: 50px;
     color:white;
     font-family: 'Press Start 2P';
 }
 
-h2{
+h2 {
     font-family: 'Orbitron';
-
 }
+
+.title2 {
+    font-family: "Press Start 2P";
+}
+
 /* Display none par défaut */
-#TourOrdinateur,#tourSuivant, #fin, #gagne, #perdu, #egalite{
+#TourOrdinateur,#tourSuivant, #fin, #gagne, #perdu, #egalite {
     display: none;
 }
 
 /* https://codepen.io/Gthibaud/pen/MqpmXE */
-section{
+section {
     width:auto;
     height: auto;
     padding: 1.6rem 3rem;
@@ -41,18 +45,22 @@ section{
 
 .btnJP {
     color:inherit;
-    font-family:inherit;
-    font-size: inherit;
+    font-family: 'Orbitron';
+    font-weight: bold;
     background: white;
     padding: 0.3rem 3.4rem;
-    border: 3px solid black;
-    margin-right: 2.6rem;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-left: 5px;
     box-shadow: 0 0 0 black;
     transition: all 0.2s;
+
 }
 
-.btnJP:last-child {
-    margin: 0;
+.nombre {
+    width: 175px;
+    height: 22px;
 }
 
 .btnJP:hover {
@@ -60,7 +68,7 @@ section{
     transform: translate(-0.4rem, -0.4rem);
 }
 
-.btnJP:active{
+.btnJP:active {
     box-shadow: 0 0 0 black;
     transform: translate(0, 0);
 }

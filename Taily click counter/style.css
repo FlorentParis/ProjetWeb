@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27');
+body{
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(#554562, #102246);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    font-size: 35px;
+    color: rgba(255,255,255,1);
+    font-family: 'Press Start 2P';
+    margin: 30px;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#Resultat{
+    width: 860px;
+    padding: 30px;
+    background-color : black  ;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 110px;
+    border: 50px solid rgb(24, 23, 23); 
+    color:  white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+}
+input[type=button]{
+    background-color: rgb(161, 161, 161);
+    border: none;
+    border-radius: 100%;
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 15pt;
+}
+#Reset{
+    height: 50px;
+}
+#button1{
+    margin-right: 95px;
+}
+span{
+    margin: 0 50px;
+}
+.message{ 
+    transition-duration: 0.2s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.message_animated{
+    transition-duration: 0.2s;
+    opacity: 0;
+    transform: translateY(-200px);
+}
+.message_animatedEnBas{
+    transform: translateY(200px);
+    opacity: 0;
+}

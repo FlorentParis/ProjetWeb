@@ -4,80 +4,38 @@
     <meta charset="UTF-8">
     <title>Taily Click Counter</title>
     <script src="TailyClickCounter.JS" defer></script>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="../styleGlobal/styleGlobal.css">
+    <script src="../styleGlobal/styleGlobal.js" defer></script>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%27');
-    h1{
-      position: absolute;
-      right: 27%;
-      top: 12%;
-      font-size: 80px;
-      color: rgba(255,255,255,1);
-      font-family: 'Press Start 2P';
-    }
-    html{
-      height: 100%;
-      width: 100%;
-      background: radial-gradient(#554562, #102246);
-    }
-    div{
-      position:absolute;
-      left: 36.5%;
-      top: 33%;
-      width: 200px;
-      height: 200px;
-      margin-left: -100px; 
-      margin-top: -100px; 
-    }
-    #Resultat{
-      padding: 30px;
-      width: 860px;
-      height: 320px;
-      background-color : black  ;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 110px;
-      border: 50px solid rgb(24, 23, 23); 
-      color:  white;
-    }
-    #button1 {
-      position:absolute;
-      left: 293%;
-      top: 58%;
-      margin-left: -100px; 
-      margin-top: -100px; 
-      background-color: rgb(161, 161, 161);
-      border: rgb(102, 102, 102);
-      border-radius: 100%;
-      padding: 15px;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: bold;
-      font-size: 15pt;
-    }
-    #Reset {
-      position:absolute;
-      left: 550%;
-      top: 168%;
-      margin-left: -100px; 
-      margin-top: -100px; 
-      background-color: rgb(161, 161, 161);
-      border: rgb(102, 102, 102);
-      border-radius: 100%;
-      padding: 15px;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: bold;
-      font-size: 15pt;
-    }
-  </style>
   <body>
     <h1 >Click Counter</h1>
-
+    <input type="button" id = "button1" value ="+1" onclick="comp1()">
     <div class="main">
-      <input type="button" id = "button1" value ="+1" onclick="Somme()">
-      <br>
-      <input id="Resultat" value ="0 : 0 : 0 : 0">
+      <div id="Resultat">
+        <div id="compteur4"></div>
+        <span>:</span>
+        <div id="compteur3"></div>
+        <span>:</span>
+        <div id="compteur2"></div>
+        <span>:</span>
+        <div id="compteur1"></div>
+      </div>
       <input type="button" id="Reset" value ="Reset" onclick="Reset()">
     </div>
 
-
+    <div class="infoContent">
+      <button id="info">
+          <img src="../styleGlobal/src/info.svg" alt="">
+      </button>
+      <div id="notice" class="notice">
+          <h2 id="titleNotice">Comment jouer :</h2>
+        <button id="closeNotice" >✖</button>
+        <br>
+          <p>Un compteur, ou compteur-enregistreur selon une recommandation de l'OQLF, est un petit appareil conçu pour tenir dans la main, composé d'un dispositif affichant un nombre entier, et d'une gachette actionnable par l'utilisateur pour incrémenter ce nombre.</p>
+      </div>
+      <button id="close" ><a href="../index.html">✖</a></button>
+    </div>
   </body>
 </html>

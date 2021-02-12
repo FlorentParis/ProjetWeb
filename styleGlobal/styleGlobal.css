@@ -36,6 +36,19 @@
     align-items: center;
     width: 500px;
     border: 3px solid black;
+    color: black;
+    max-height: 70vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.notice::-webkit-scrollbar {
+    display: none;
+}
+
+.notice {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .notice.active{
@@ -53,4 +66,8 @@
 
 #closeNotice > a{
     color: black;
+}
+
+li{
+    margin-top: 10px;
 }
