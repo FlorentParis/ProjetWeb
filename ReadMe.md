@@ -1,6 +1,6 @@
 # PROJET WEB - Plateforme de divertissements 
 
-##Groupe 3 : 
+## Groupe 3 : 
 * GRELET Mathis
 * PARIS Florent
 * SYMCHOWICZ Benjamin
@@ -16,18 +16,19 @@ Cette plateforme prend la forme d'un site web disponible [en ligne](https://lapl
 que des divertissements codés en langage web front (HTML/CSS/JS).
 
 
-
-
-
 Pour plus d'information, [cliquez-ici](Projet_Web_-_Plateforme_de_divertissements.pdf)
 
-# La répartition des tâches :
+## La répartition des tâches :
 
 
 Divertissement : développeur principal (aide)
 
 
-A savoir, nous avons la plupart du temps fait du pair-programming
+Nous avons décidé de faire du pair-programming pour développer et déboguer quelques jeux.
+
+
+En ce qui concerne la gestion du projet, nous avons adopté la méthode agile, a chaque fin de journée on organisé 
+une petite réunion pour faire un point sur l'avancement du projet et les améliorations a faire. 
 * Conception du style et mise en place de la page d'accueil : Steve
 * Juste Prix : Giselle
 * ClickCounter : Benjamin (Florent)
