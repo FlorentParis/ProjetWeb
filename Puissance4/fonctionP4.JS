@@ -1292,7 +1292,7 @@ function sleep(ms) {
   }
 function Verifegalité() {
     if (Colonne1Rempli == 1 && Colonne2Rempli == 1 && Colonne3Rempli == 1 && Colonne4Rempli == 1 && Colonne5Rempli == 1 && Colonne6Rempli == 1 && Colonne7Rempli == 1){
-        alert("Waw, Egalité ! Tant de temps perdu pour rien ! ;-)")
+        alert("Waw, Egalité ! Tant de temps perdu pour rien !")
         return true
     }
 } 
