@@ -67,7 +67,7 @@ function ajout(game) {
     document.getElementById('cassette').src="images/Puissance4.svg";
     l6.classList.add("orange");
   }else if(game == "snake"){
-    document.getElementById("link").href="snake/index.html";
+    document.getElementById("link").href="snake/snake2/index.html";
     document.getElementById('cassette').src="images/Snake.svg";
     l7.classList.add("orange");
   }else{
