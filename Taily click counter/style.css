@@ -30,6 +30,7 @@ h1{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    overflow: hidden;
 }
 input[type=button]{
     background-color: rgb(161, 161, 161);
@@ -50,12 +51,12 @@ span{
     margin: 0 50px;
 }
 .message{ 
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
     opacity: 1;
     transform: translateY(0);
 }
 .message_animated{
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
     opacity: 0;
     transform: translateY(-200px);
 }
