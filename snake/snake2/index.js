@@ -94,11 +94,11 @@ function isGameOver(){
 //Game Over Dégradé
     if (gameOver) {
         ctx.fillStyle = "white";
-        ctx.font = "50px Verdana";
+        ctx.font = "50px Orbitron";
 
         if (gameOver) {
             ctx.fillStyle = "white";
-            ctx.font = "50px Verdana";
+            ctx.font = "50px Orbitron";
         
             var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
             gradient.addColorStop("0", " #237B02");
@@ -120,7 +120,7 @@ function isGameOver(){
 //Score 
 function drawScore(){
     ctx.fillStyle = "white";
-    ctx.font = "20px Arial"
+    ctx.font = "20px Orbitron"
     ctx.fillText("Score " + score, canvas.width-100, 20);
 }
 

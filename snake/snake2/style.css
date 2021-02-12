@@ -1,4 +1,18 @@
 /* Sources: https://www.youtube.com/watch?v=WCKrji3SRW0 : Animation*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap%27');
+
+body{
+            
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#554562, #102246);
+}
+canvas{
+    box-shadow: black 20px 10px 50px;
+}
+
 .snake{
     position: relative;
     height: 204px;
