@@ -8,8 +8,6 @@ let loader = document.getElementById("loader");
 let test = 0;
 const btnsound = document.getElementById("btnsound");
 
-let etat = false;
-
 /* Init l1,l2,...l7 puis Init Liste */
 let l1 = document.getElementById("l1");
 let l2 = document.getElementById("l2");
@@ -26,7 +24,7 @@ function sleep(ms) {
 }
 
 async function demo(){
-  etat = false;
+  document.getElementById("bg_music").pause();
   while(test<11){
     var time = Math.floor(Math.random(2) * Math.floor(5));
     cursor = 10*test;
@@ -77,6 +75,8 @@ function ajout(game) {
     alert("bug");
   }
 }
+
+let etat = false;
 
 function ajoutSound() {
   if(etat){
