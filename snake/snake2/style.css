@@ -1,0 +1,20 @@
+/* Sources: https://www.youtube.com/watch?v=WCKrji3SRW0 : Animation*/
+.snake{
+    position: relative;
+    height: 204px;
+    background: url(snake.png);
+    width: calc(1224px /5);
+    transform: perspective(500px) rotateX(-25deg);
+    animation: animateSnake 1s steps(5) infinite;
+}
+@keyframes animateSnake
+{
+    from
+    {
+        background-position: 0;
+    }
+    to
+    {
+        background-position: -1224px;
+    }
+}
