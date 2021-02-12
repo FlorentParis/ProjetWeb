@@ -6,6 +6,7 @@ let bar = document.getElementById("bar");
 let cursor = 10;
 let loader = document.getElementById("loader");
 let test = 0;
+const btnsound = document.getElementById("btnsound");
 
 /* Init l1,l2,...l7 puis Init Liste */
 let l1 = document.getElementById("l1");
@@ -66,7 +67,7 @@ function ajout(game) {
     document.getElementById('cassette').src="images/Puissance4.svg";
     l6.classList.add("orange");
   }else if(game == "snake"){
-    document.getElementById("link").href="snake/snake2/index.html";
+    document.getElementById("link").href="snake/index.html";
     document.getElementById('cassette').src="images/Snake.svg";
     l7.classList.add("orange");
   }else{
@@ -74,3 +75,16 @@ function ajout(game) {
   }
 }
 
+let etat = false;
+
+function ajoutSound() {
+  if(etat){
+    etat = false;
+    document.getElementById("imgsound").src = "images/no-sound.svg";
+    document.getElementById("bg_music").pause();
+  }else{
+    etat = true;
+    document.getElementById("imgsound").src = "images/sound.svg";
+    document.getElementById("bg_music").play();
+  }
+}

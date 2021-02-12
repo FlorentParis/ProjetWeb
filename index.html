@@ -15,6 +15,9 @@
 </section>
 <main class="grille">
     <section id="titre">
+        <button id="btnsound" onclick="ajoutSound()">
+            <img id="imgsound" src="images/no-sound.svg" alt="">
+        </button>
         <h1>Les Héticiens vous présentent<br>la plateforme de divertissements</h1>
     </section>
     <section class="jeux">
@@ -41,6 +44,10 @@
     <section class="cta">
         <span><a href="#" id="link">- START -</a></span>
     </section>
+    
+    <audio id="bg_music" class="audio" autoplay controls loop>
+        <source src="son.mp3" type="audio/mp3" />
+    </audio>
 
 
 </main>
@@ -87,5 +94,6 @@
         </ul>
     </div>
 </div>
+
 </body>
 </html>
