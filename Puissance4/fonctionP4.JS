@@ -1,3 +1,5 @@
+//TODO : Egalité à faire
+
 var ligne0 = [0,0,0,0,0,0,0];
     ligne1 = [0,0,0,0,0,0,0];
     ligne2 = [0,0,0,0,0,0,0];

@@ -30,7 +30,7 @@ function affecterValeurCouleur(event)
 function affecterCouleurPixel(event)
 {
     event.target.style.backgroundColor = couleurStylo;
-    console.log(event.target);
+    //console.log(event.target);
 }
 
 function fnPipette()
@@ -44,11 +44,11 @@ function recupAffectCouleurPixel(event)
 {
     //récupére la couleur choisie avec la pipette
     var couleurPipette = event.target.style.backgroundColor;
-    console.log(couleurPipette);
+    //console.log(couleurPipette);
 
     //affiche la couleur choisie avec la pipette dans l'input color
     couleurInput.value = rgb2hex(event.target.style.backgroundColor);
-    console.log(couleurInput.value)
+    //console.log(couleurInput.value)
 
     //change la couleur du stylo
     couleurStylo = couleurPipette?couleurPipette:'#FFFFFF';

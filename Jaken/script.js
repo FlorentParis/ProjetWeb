@@ -1,7 +1,7 @@
-const btnCiseaux = document.getElementById("ciseaux");
-const btnPierre = document.getElementById("pierre");
-const btnFeuille = document.getElementById("feuille");
-const choix = ["ciseaux", "pierre", "papier"];
+const btnCiseaux = document.getElementById("Ciseaux");
+const btnPierre = document.getElementById("Pierre");
+const btnFeuille = document.getElementById("Papier");
+const choix = ["Ciseaux", "Pierre", "Papier"];
 
 var choiceOrdi="";
 var choicePlayer ="";
@@ -13,9 +13,9 @@ document.getElementById("resultOrdi").innerHTML=sommeOrdi;
 
 function main(){
     verifwin();
-    btnCiseaux.addEventListener("click", function(){game("ciseaux")});
-    btnPierre.addEventListener("click", function(){game("pierre")});
-    btnFeuille.addEventListener("click", function(){game("papier")});
+    btnCiseaux.addEventListener("click", function(){game("Ciseaux")});
+    btnPierre.addEventListener("click", function(){game("Pierre")});
+    btnFeuille.addEventListener("click", function(){game("Papier")});
 }
 
 function game(btnChoice) {
@@ -24,40 +24,40 @@ function game(btnChoice) {
     choiceOrdi = choix[random];
     choicePlayer = btnChoice;
     if (choicePlayer === choiceOrdi){       //egalité
-        console.log("Egalité");
+        //console.log("Egalité");
         popUpTimed("popegal");
-    }else if(choicePlayer === "ciseaux" && choiceOrdi === "papier"){
-        console.log("Le joueur gagne !");
+    }else if(choicePlayer === "Ciseaux" && choiceOrdi === "Papier"){
+        //console.log("Le joueur gagne !");
         sommeJoueur += 1;
         document.getElementById("resultJoueur").innerHTML=sommeJoueur;
         popUpTimed("popwin");
-    }else if(choicePlayer === "ciseaux" && choiceOrdi === "pierre"){
-        console.log("L'ordi gagne !");
+    }else if(choicePlayer === "Ciseaux" && choiceOrdi === "Pierre"){
+        //console.log("L'ordi gagne !");
         sommeOrdi += 1;
         document.getElementById("resultOrdi").innerHTML=sommeOrdi;
         popUpTimed("poploose");
-    }else if(choicePlayer === "pierre" && choiceOrdi === "ciseaux"){
-        console.log("Le joueur Gagne !");
+    }else if(choicePlayer === "Pierre" && choiceOrdi === "Ciseaux"){
+        //console.log("Le joueur Gagne !");
         sommeJoueur += 1;
         document.getElementById("resultJoueur").innerHTML=sommeJoueur;
         popUpTimed("popwin");
-    }else if(choicePlayer === "pierre" && choiceOrdi === "papier"){
-        console.log("L'ordi gagne !");
+    }else if(choicePlayer === "Pierre" && choiceOrdi === "Papier"){
+        //console.log("L'ordi gagne !");
         sommeOrdi += 1;
         document.getElementById("resultOrdi").innerHTML=sommeOrdi;
         popUpTimed("poploose");
-    }else if(choicePlayer === "papier" && choiceOrdi === "pierre"){
-        console.log("Le joueur Gagne !");
+    }else if(choicePlayer === "Papier" && choiceOrdi === "Pierre"){
+        //console.log("Le joueur Gagne !");
         sommeJoueur += 1;
         document.getElementById("resultJoueur").innerHTML=sommeJoueur;
         popUpTimed("popwin");
-    }else if(choicePlayer === "papier" && choiceOrdi === "ciseaux"){
-        console.log("L'ordi gagne !");
+    }else if(choicePlayer === "Papier" && choiceOrdi === "Ciseaux"){
+        //console.log("L'ordi gagne !");
         sommeOrdi += 1;
         document.getElementById("resultOrdi").innerHTML=sommeOrdi;
         popUpTimed("poploose");
     }else{
-        console.log("Error.");
+        //console.log("Error.");
     }
     verifwin()
 }
@@ -73,8 +73,8 @@ function popUpTimed(resultDiv){
 
 // TODO revoir l'affichage de winGlobal et looseGlobal
 function verifwin() {
-    console.log(choicePlayer,choiceOrdi);
-    console.log("verif "+sommeJoueur, sommeOrdi);
+    //console.log(choicePlayer,choiceOrdi);
+    //console.log("verif "+sommeJoueur, sommeOrdi);
     if(sommeJoueur > sommeOrdi && sommeJoueur === 10){
         //alert("stop1")
         document.getElementById("winglobal").style.display="block";
